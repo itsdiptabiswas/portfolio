@@ -1,0 +1,122 @@
+.achievements {
+  padding: var(--sp-xl) var(--sp-md);
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.achievements-header {
+  margin-bottom: var(--sp-lg);
+}
+.achievements-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(253,246,236,0.4);
+  margin-bottom: 8px;
+}
+.achievements-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 80px);
+  color: var(--cream);
+  line-height: 0.9;
+}
+.achievements-title em {
+  font-style: normal;
+  color: var(--yellow);
+}
+
+.achievements-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-md);
+  align-items: start;
+}
+
+/* Award card */
+.award-card {
+  background: var(--yellow);
+  color: var(--ink);
+  border: 3px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-lg) var(--sp-md);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  transition: transform var(--dur-mid) var(--ease-bounce),
+              box-shadow var(--dur-mid);
+  box-shadow: 0 0 0 var(--ink);
+}
+.award-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+}
+
+.award-icon { font-size: 56px; line-height: 1; }
+
+.award-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1;
+}
+.award-issuer {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  opacity: 0.7;
+  letter-spacing: 0.06em;
+}
+.award-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+.award-cta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* Metrics grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-sm);
+}
+
+.metric-card {
+  border-radius: var(--radius-lg);
+  padding: var(--sp-md);
+  border: 2px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metric-num {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+}
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .achievements-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+}

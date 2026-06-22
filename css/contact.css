@@ -1,0 +1,147 @@
+.contact {
+  padding: var(--sp-xl) var(--sp-md) var(--sp-lg);
+}
+
+.contact-card {
+  background: var(--red);
+  color: var(--cream);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--sp-xl) var(--sp-lg);
+  position: relative;
+  overflow: hidden;
+}
+.contact-card::after {
+  content: '🥣';
+  position: absolute;
+  right: -10px;
+  bottom: -20px;
+  font-size: 200px;
+  opacity: 0.12;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.contact-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 7vw, 96px);
+  color: var(--cream);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.contact-sub {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 520px;
+  opacity: 0.9;
+  margin-bottom: var(--sp-md);
+}
+
+/* Email button */
+.contact-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: clamp(14px, 2vw, 18px);
+  padding: 16px 24px;
+  border-radius: var(--radius-pill);
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  margin-bottom: var(--sp-md);
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+  position: relative;
+  z-index: 2;
+}
+.contact-email-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+.contact-email-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.email-copy-badge {
+  background: var(--mint);
+  color: var(--cream);
+  font-size: 9px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.1em;
+  transition: background var(--dur-fast);
+}
+.email-copy-badge.copied { background: var(--mint); }
+
+/* Social links */
+.contact-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-link {
+  background: rgba(0,0,0,0.14);
+  border: 2px solid rgba(253,246,236,0.4);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cream);
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background var(--dur-fast), transform var(--dur-fast);
+}
+.contact-link:hover {
+  background: var(--ink);
+  transform: translateY(-3px);
+}
+
+/* Meta info */
+.contact-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: var(--sp-md);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  opacity: 0.8;
+  position: relative;
+  z-index: 2;
+}
+
+/* Footer */
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 700px) {
+  .contact-card { padding: var(--sp-lg) var(--sp-md); }
+  .contact-card::after { font-size: 120px; }
+}
