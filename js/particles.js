@@ -1,44 +1,71 @@
 /**
- * Three.js particle background for the hero section.
+ * Three.js floating accent particles for the hero — subtle round "cereal dust"
+ * in warm cereal colors, layered behind the box. Enhancement, not background.
  * Exports: initParticles(canvas) → { destroy }
  */
 import * as THREE from 'three';
 
+/* Build a soft round sprite texture so points are circles, not squares */
+function makeCircleTexture() {
+  const size = 64;
+  const c = document.createElement('canvas');
+  c.width = c.height = size;
+  const ctx = c.getContext('2d');
+  const g = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
+  g.addColorStop(0,   'rgba(255,255,255,1)');
+  g.addColorStop(0.4, 'rgba(255,255,255,0.85)');
+  g.addColorStop(1,   'rgba(255,255,255,0)');
+  ctx.fillStyle = g;
+  ctx.beginPath();
+  ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+  ctx.fill();
+  const tex = new THREE.CanvasTexture(c);
+  tex.needsUpdate = true;
+  return tex;
+}
+
 export function initParticles(canvas) {
   if (!canvas) return { destroy: () => {} };
 
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   const scene  = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1000);
   camera.position.z = 80;
 
-  /* Particle geometry */
-  const COUNT = 160;
-  const positions = new Float32Array(COUNT * 3);
-  const speeds    = new Float32Array(COUNT);
+  const sprite = makeCircleTexture();
 
+  /* Cereal colors */
+  const COLORS = [0xFFC53A, 0xFF5A3C, 0x2FB783, 0x3B7DFF, 0x8B5CF6];
+  const COUNT = 70;
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const items = [];
   for (let i = 0; i < COUNT; i++) {
-    positions[i * 3]     = (Math.random() - 0.5) * 200;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 140;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 80;
-    speeds[i] = 0.15 + Math.random() * 0.4;
+    const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    const mat = new THREE.PointsMaterial({
+      color,
+      size: 1.4 + Math.random() * 2.2,
+      map: sprite,
+      transparent: true,
+      opacity: 0.18 + Math.random() * 0.22,
+      depthWrite: false,
+      sizeAttenuation: true,
+    });
+    const geo = new THREE.BufferGeometry();
+    const pos = new Float32Array([
+      (Math.random() - 0.5) * 210,
+      (Math.random() - 0.5) * 150,
+      (Math.random() - 0.5) * 70,
+    ]);
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    const pt = new THREE.Points(geo, mat);
+    group.add(pt);
+    items.push({ pt, speed: 0.06 + Math.random() * 0.12 });
   }
-
-  const geo = new THREE.BufferGeometry();
-  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-  const mat = new THREE.PointsMaterial({
-    color: 0xe8432d,
-    size: 2.5,
-    sizeAttenuation: true,
-    transparent: true,
-    opacity: 0.65,
-  });
-
-  const points = new THREE.Points(geo, mat);
-  scene.add(points);
 
   /* Mouse parallax */
   let mx = 0, my = 0;
@@ -48,37 +75,32 @@ export function initParticles(canvas) {
   };
   window.addEventListener('mousemove', onMove, { passive: true });
 
-  /* Resize — must set canvas width/height attributes, not just CSS */
+  /* Resize against parent so buffer is never 0×0 */
   function resize() {
     const w = canvas.parentElement?.offsetWidth  || window.innerWidth;
     const h = canvas.parentElement?.offsetHeight || window.innerHeight;
-    if (w === 0 || h === 0) return;
+    if (!w || !h) return;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
   }
   const ro = new ResizeObserver(resize);
   ro.observe(canvas.parentElement || document.body);
-  /* Small delay so layout is computed before first resize */
   setTimeout(resize, 0);
 
   /* Animate */
-  let raf;
-  let t = 0;
+  let raf, t = 0;
   function animate() {
     raf = requestAnimationFrame(animate);
-    t += 0.006;
-
-    const pos = geo.attributes.position.array;
-    for (let i = 0; i < COUNT; i++) {
-      pos[i * 3 + 1] += speeds[i] * 0.05;
-      if (pos[i * 3 + 1] > 70) pos[i * 3 + 1] = -70;
-    }
-    geo.attributes.position.needsUpdate = true;
-
-    points.rotation.y = mx * 0.08 + Math.sin(t * 0.25) * 0.05;
-    points.rotation.x = my * 0.05 + Math.cos(t * 0.18) * 0.03;
-
+    t += 0.005;
+    items.forEach(({ pt, speed }) => {
+      const p = pt.geometry.attributes.position.array;
+      p[1] += speed;
+      if (p[1] > 78) p[1] = -78;
+      pt.geometry.attributes.position.needsUpdate = true;
+    });
+    group.rotation.y = mx * 0.1 + Math.sin(t * 0.3) * 0.05;
+    group.rotation.x = my * 0.06;
     renderer.render(scene, camera);
   }
   animate();
@@ -88,8 +110,8 @@ export function initParticles(canvas) {
       cancelAnimationFrame(raf);
       window.removeEventListener('mousemove', onMove);
       ro.disconnect();
-      geo.dispose();
-      mat.dispose();
+      items.forEach(({ pt }) => { pt.geometry.dispose(); pt.material.dispose(); });
+      sprite.dispose();
       renderer.dispose();
     }
   };

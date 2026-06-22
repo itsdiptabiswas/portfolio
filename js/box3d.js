@@ -1,84 +1,52 @@
 /**
  * CSS 3D cereal box — scroll rotation + drag-to-spin.
+ * rotY = -22 + progress*340 + dragY
+ * rotX = -8  + sin(progress*2π)*6
  * Exports: initBox(wrapperEl) → { setProgress, destroy }
  */
 export function initBox(wrapper) {
   if (!wrapper) return { setProgress: () => {}, destroy: () => {} };
 
-  let rotY = -22;
-  let rotX = 4;
-  let targetY = rotY;
-  let targetX = rotX;
-  let scrollRotY = rotY;
-
-  let dragging = false;
-  let lastX = 0;
-  let lastY = 0;
-  let velX = 0;
-  let velY = 0;
+  const state = { rotY: -22, rotX: -8, dragY: 0 };
+  let progress = 0;
   let raf;
 
-  function applyTransform() {
-    wrapper.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  function loop() {
+    raf = requestAnimationFrame(loop);
+    const targetY = -22 + (progress * 340) + state.dragY;
+    const targetX = -8 + Math.sin(progress * Math.PI * 2) * 6;
+    state.rotY += (targetY - state.rotY) * 0.08;
+    state.rotX += (targetX - state.rotX) * 0.08;
+    wrapper.style.transform =
+      `translate(-50%,-50%) rotateX(${state.rotX}deg) rotateY(${state.rotY}deg)`;
   }
-
-  function lerp(a, b, t) { return a + (b - a) * t; }
-
-  function tick() {
-    raf = requestAnimationFrame(tick);
-    if (!dragging) {
-      targetY = scrollRotY;
-      velX *= 0.88;
-      velY *= 0.88;
-      targetX += velX;
-    }
-    rotY = lerp(rotY, targetY, 0.08);
-    rotX = lerp(rotX, targetX, 0.08);
-    applyTransform();
-  }
-  tick();
+  loop();
 
   /* Scroll progress → rotation */
-  function setProgress(p) {
-    scrollRotY = -22 + p * 340;
-  }
+  function setProgress(p) { progress = p; }
 
-  /* Drag */
+  /* Drag to spin (horizontal) */
+  const drag = { active: false, startX: 0 };
   function onDown(e) {
-    dragging = true;
+    drag.active = true;
+    drag.startX = (e.touches ? e.touches[0] : e).clientX;
     wrapper.style.cursor = 'grabbing';
-    const pt = e.touches ? e.touches[0] : e;
-    lastX = pt.clientX;
-    lastY = pt.clientY;
-    velX = velY = 0;
   }
-
   function onMove(e) {
-    if (!dragging) return;
-    e.preventDefault();
-    const pt = e.touches ? e.touches[0] : e;
-    const dx = pt.clientX - lastX;
-    const dy = pt.clientY - lastY;
-    lastX = pt.clientX;
-    lastY = pt.clientY;
-    velX = -dy * 0.25;
-    velY =  dx * 0.45;
-    targetX = rotX + velX;
-    targetY = rotY + velY;
-    rotX = targetX;
-    rotY = targetY;
-    applyTransform();
+    if (!drag.active) return;
+    const x = (e.touches ? e.touches[0] : e).clientX;
+    state.dragY += (x - drag.startX) * 0.4;
+    drag.startX = x;
   }
-
   function onUp() {
-    dragging = false;
+    drag.active = false;
     wrapper.style.cursor = 'grab';
   }
 
   wrapper.addEventListener('mousedown',  onDown);
   wrapper.addEventListener('touchstart', onDown, { passive: true });
   window.addEventListener('mousemove',  onMove);
-  window.addEventListener('touchmove',  onMove, { passive: false });
+  window.addEventListener('touchmove',  onMove, { passive: true });
   window.addEventListener('mouseup',    onUp);
   window.addEventListener('touchend',   onUp);
 

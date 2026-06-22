@@ -114,51 +114,80 @@
     <section id="hero" class="hero-pin" aria-label="Hero">
       <div class="hero-sticky">
 
-        <!-- Three.js canvas -->
+        <!-- Three.js canvas (subtle floating accent) -->
         <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+        <!-- Yellow glow blob -->
+        <div class="hero-blob" aria-hidden="true"></div>
 
         <!-- Cereal box 3D scene -->
         <div class="hero-scene" aria-hidden="true">
-          <div class="box-wrapper" role="img" aria-label="Cereal box mascot">
+          <div class="box-shadow-floor"></div>
+          <div class="box-wrapper" role="img" aria-label="A cereal box labelled Dipta's Dev Crunch">
 
-            <!-- Front -->
+            <!-- FRONT -->
             <div class="box-face front">
-              <div class="box-front-brand">★ EST. 2018 · PUNE, INDIA</div>
-              <div class="box-front-mascot">🧑‍💻</div>
-              <div class="box-front-title">DIPTA<br/>BRAN</div>
-              <div class="box-front-badge">NOW HIRING</div>
-              <div class="box-front-desc">PACKED WITH REACT · TYPESCRIPT<br/>&amp; 60FPS PERFORMANCE</div>
+              <div class="bf">
+                <div class="bf-top">
+                  <span>★ EST. 2020</span>
+                  <span class="bf-badge">NEW 60FPS!</span>
+                </div>
+                <div class="bf-brand">DIPTA'S<span class="pop">DEV CRUNCH</span></div>
+                <div class="bf-sub">FULL-STACK FLAKES · REACT-FROSTED</div>
+                <div class="bf-bowl">
+                  <div class="milk"></div>
+                  <div class="bowl"></div>
+                  <div class="o" style="left:30px;bottom:30px"></div>
+                  <div class="o" style="left:70px;bottom:44px;border-color:var(--mint)"></div>
+                  <div class="o" style="left:112px;bottom:32px;border-color:var(--blue)"></div>
+                  <div class="o" style="left:150px;bottom:42px;border-color:var(--purple)"></div>
+                  <div class="bf-flag">+ TypeScript</div>
+                </div>
+                <div class="bf-net">NET WT. 6+ YEARS (1 SR. ENGINEER)</div>
+              </div>
             </div>
 
-            <!-- Back -->
+            <!-- BACK -->
             <div class="box-face back">
-              <div class="box-back-title">Skill Facts</div>
-              <div style="height:3px;background:#1a1a1a;margin:8px 0"></div>
-              <div class="box-back-row"><span>JavaScript</span><span>98%</span></div>
-              <div class="box-back-row"><span>React</span><span>96%</span></div>
-              <div class="box-back-row"><span>TypeScript</span><span>92%</span></div>
-              <div class="box-back-row"><span>TanStack</span><span>95%</span></div>
-              <div class="box-back-row"><span>CSS / Design</span><span>91%</span></div>
-              <div class="box-back-row"><span>Node.js</span><span>82%</span></div>
-              <div style="height:6px;background:#1a1a1a;margin:8px 0"></div>
-              <div class="box-back-footer">* Daily value based on 6+ years of shipping</div>
+              <div class="bback">
+                <h4>What's inside?</h4>
+                <p>A Senior Frontend Engineer who turns impossible UI problems into 60fps reality. Best served remote, with strong engineering culture.</p>
+                <div class="fact">⚡ 60K-row tables @ 60fps</div>
+                <div class="fact">🔁 async state that stays in sync</div>
+                <div class="fact">🧱 UI systems that hold at scale</div>
+                <div class="fact">🏆 Star Employee Award ’24</div>
+              </div>
             </div>
 
-            <!-- Left -->
-            <div class="box-face left">
-              <div class="side-text">SENIOR SDE3</div>
-            </div>
-
-            <!-- Right -->
+            <!-- RIGHT -->
             <div class="box-face right">
-              <div class="side-skill">REACT<br/>TS<br/>TANSTACK<br/>CSS<br/>NODE<br/>FIREBASE<br/>REDUX</div>
+              <div class="bside">
+                <h5>FACTS</h5>
+                <div class="row"><span>YRS</span><span>6+</span></div>
+                <div class="row"><span>FPS</span><span>60</span></div>
+                <div class="row"><span>ROWS</span><span>60K</span></div>
+                <div class="row"><span>LVL</span><span>SDE3</span></div>
+                <div class="row"><span>BUGS</span><span>0*</span></div>
+              </div>
             </div>
 
-            <!-- Top -->
-            <div class="box-face top"><span>OPEN TO REMOTE</span></div>
+            <!-- LEFT -->
+            <div class="box-face left">
+              <div class="bside">
+                <h5>STACK</h5>
+                <div class="row"><span>React</span><span>96</span></div>
+                <div class="row"><span>TS</span><span>92</span></div>
+                <div class="row"><span>Node</span><span>85</span></div>
+                <div class="row"><span>AWS</span><span>80</span></div>
+                <div class="row"><span>Mongo</span><span>82</span></div>
+              </div>
+            </div>
 
-            <!-- Bottom -->
-            <div class="box-face bottom"><span>PUNE · GMT+5:30</span></div>
+            <!-- TOP -->
+            <div class="box-face top"><div class="btop">★ DIPTA-O's ★</div></div>
+
+            <!-- BOTTOM -->
+            <div class="box-face bottom"><div class="bbot">BEST BEFORE: NEVER</div></div>
 
           </div>
         </div>
@@ -166,40 +195,36 @@
         <!-- Caption overlays (scroll-driven) -->
         <div class="hero-captions" aria-live="polite">
           <div class="hero-caption" id="caption-0">
-            <div class="caption-eyebrow">★ Available for remote-first roles</div>
-            <h1 class="caption-head">
-              Hi, I'm<br/><em>Dipta.</em>
-            </h1>
-            <p class="caption-sub">Senior Frontend Engineer (SDE3) building performant React &amp; TypeScript apps since 2018.</p>
+            <div class="caption-eyebrow">Meet</div>
+            <h1 class="caption-head">Dipta Biswas</h1>
+            <p class="caption-sub">A Senior Frontend Engineer, packaged fresh.</p>
+            <span class="caption-tag">SCROLL TO ROTATE →</span>
           </div>
           <div class="hero-caption" id="caption-1">
-            <div class="caption-eyebrow">★ 6+ years · React · TypeScript</div>
-            <h2 class="caption-head">
-              Ships at<br/><em>60fps.</em>
-            </h2>
-            <p class="caption-sub">Obsessed with smooth UIs, clean architecture, and code reviews that actually teach something.</p>
+            <div class="caption-eyebrow">Fully</div>
+            <h2 class="caption-head">loaded.</h2>
+            <p class="caption-sub">React · TypeScript · TanStack · 6+ years of crunch.</p>
+            <span class="caption-tag">KEEP SCROLLING</span>
           </div>
           <div class="hero-caption" id="caption-2">
-            <div class="caption-eyebrow">★ Let's build something great</div>
-            <h2 class="caption-head">
-              Ready to<br/><em>cook.</em>
-            </h2>
-            <p class="caption-sub">Scroll down to see my skills, projects, and work history — or jump straight to contact.</p>
+            <div class="caption-eyebrow">Ships at</div>
+            <h2 class="caption-head">60 fps.</h2>
+            <p class="caption-sub">60K-row tables, async in sync, zero jank.</p>
+            <span class="caption-tag">DIG IN ↓</span>
           </div>
         </div>
 
-        <div class="hero-scroll-hint" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Scroll
+        <!-- Side badges -->
+        <div class="hero-side-badges" aria-hidden="true">
+          <div class="hsb red" style="--r:3deg"><b>6+ yrs</b><span>shipping UIs</span></div>
+          <div class="hsb" style="--r:-2deg"><b>60fps</b><span>60K-row tables</span></div>
+          <div class="hsb" style="--r:2deg"><b>SDE3</b><span>@ Gyaan AI</span></div>
         </div>
 
-        <div class="hero-drag-hint" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-            <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          Drag to spin
+        <!-- Scroll rail -->
+        <div class="hero-scroll-rail" aria-hidden="true">
+          <span>SCROLL</span>
+          <div class="rail-bar"><i class="rail-fill"></i></div>
         </div>
 
       </div>

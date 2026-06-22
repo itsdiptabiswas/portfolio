@@ -7,11 +7,28 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--bg);
+  background: var(--cream);
   color: var(--ink);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
 }
+
+::selection { background: var(--red); color: var(--cream); }
+
+/* Dotted paper texture (matches design) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.5;
+}
+
+main, header { position: relative; z-index: 1; }
 
 /* Accessibility */
 .skip-link {

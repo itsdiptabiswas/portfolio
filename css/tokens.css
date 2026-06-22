@@ -1,15 +1,20 @@
 :root {
-  /* Colors */
-  --ink:       #1a1a1a;
-  --ink-soft:  #555;
-  --cream:     #fdf6ec;
-  --red:       #e8432d;
-  --coral:     #f07a5a;
-  --mint:      #2db87e;
-  --sky:       #4a9eff;
-  --yellow:    #f5c842;
-  --purple:    #8b5cf6;
-  --bg:        #fdf6ec;
+  /* Colors — matched to Portfolio Playful design */
+  --cream:    #FBF1DE;
+  --cream-2:  #FCEAC8;
+  --ink:      #2C2016;
+  --ink-soft: #6B5842;
+  --red:      #FF5A3C;
+  --coral:    #FF7A5C;
+  --yellow:   #FFC53A;
+  --mint:     #2FB783;
+  --blue:     #3B7DFF;
+  --sky:      #3B7DFF;
+  --purple:   #8B5CF6;
+  --paper:    #FFFCF5;
+  --line:     #E7D6B6;
+  --shadow:   rgba(44, 32, 22, 0.14);
+  --bg:       #FBF1DE;
 
   /* Typography */
   --font-display: 'Fredoka', sans-serif;

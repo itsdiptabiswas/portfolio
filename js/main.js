@@ -28,8 +28,9 @@ setLoaderProgress(20);
 
 /* ── Hero scroll + box ────────────────────────────────────── */
 function initHero(box) {
-  const pin     = document.querySelector('.hero-pin');
+  const pin      = document.querySelector('.hero-pin');
   const captions = document.querySelectorAll('.hero-caption');
+  const railFill = document.querySelector('.rail-fill');
 
   if (!pin) return;
 
@@ -40,7 +41,7 @@ function initHero(box) {
   }
 
   function updateCaptions(p) {
-    const idx = p < 0.34 ? 0 : p < 0.67 ? 1 : 2;
+    const idx = p < 0.34 ? 0 : p < 0.68 ? 1 : 2;
     captions.forEach((c, i) => c.classList.toggle('active', i === idx));
   }
 
@@ -52,6 +53,7 @@ function initHero(box) {
       const p = getProgress();
       box.setProgress(p);
       updateCaptions(p);
+      if (railFill) railFill.style.transform = `scaleY(${p})`;
       scrollTicking = false;
     });
   }, { passive: true });
