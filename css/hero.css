@@ -11,14 +11,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(ellipse 80% 70% at 60% 50%,
+    #fdf0e0 0%,
+    #fdf6ec 55%,
+    #f5ede0 100%);
 }
 
 /* Three.js canvas */
 #hero-canvas {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   pointer-events: none;
+  display: block;
 }
 
 /* Cereal box scene */
