@@ -1,110 +1,84 @@
 /**
- * Achievements: clickable award card opens LinkedIn stats modal.
+ * Achievements: clickable award opens a LinkedIn-style modal; metrics reveal on scroll.
  */
-export function initAchievements() {
-  const awardCard = document.querySelector('.award-card');
-  if (!awardCard) return;
+const LINKEDIN_PROFILE = 'https://linkedin.com/in/dipta-biswas';
 
-  /* LinkedIn modal */
-  const overlay = document.createElement('div');
-  overlay.className = 'modal-overlay';
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-labelledby', 'li-modal-title');
-  overlay.innerHTML = `
-    <div class="modal-box">
-      <div class="modal-chrome">
-        <div class="modal-chrome-dots" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="modal-url-bar">linkedin.com/in/dipta-biswas</div>
-        <div class="modal-chrome-close">
-          <button aria-label="Close modal">✕</button>
-        </div>
+export function initAchievements() {
+  const award = document.querySelector('.ac-award');
+  if (!award) return;
+
+  /* Metric reveal */
+  const metrics = document.querySelectorAll('.ac-metric');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      metrics.forEach((m, i) => {
+        m.style.transitionDelay = `${i * 70}ms`;
+        m.classList.add('show');
+      });
+      io.disconnect();
+    });
+  }, { threshold: 0.2 });
+  const grid = document.querySelector('.ac-grid');
+  if (grid) io.observe(grid);
+
+  /* Modal */
+  const modal = document.createElement('div');
+  modal.className = 'acm';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.innerHTML = `
+    <div class="acm-bg"></div>
+    <div class="acm-panel">
+      <div class="acm-bar">
+        <span class="in">in</span>
+        <b>Celebrating the Outstanding Performance Award</b>
+        <button class="acm-close" aria-label="Close">✕</button>
       </div>
-      <div class="modal-header">
-        <div>
-          <h2 class="modal-title" id="li-modal-title">🏆 LinkedIn Highlights</h2>
-          <p style="font-size:13px;color:var(--ink-soft);margin-top:6px">
-            Real metrics from Dipta's LinkedIn profile
-          </p>
-        </div>
-        <div class="modal-links">
-          <a href="https://linkedin.com/in/dipta-biswas" target="_blank"
-             rel="noopener" class="modal-link-btn primary" aria-label="View LinkedIn profile">
-            ↗ View Profile
-          </a>
-        </div>
-      </div>
-      <div class="modal-linkedin">
-        <div class="linkedin-stat">
-          <div class="linkedin-stat-num">500+</div>
-          <div class="linkedin-stat-label">Connections</div>
-        </div>
-        <div class="linkedin-stat" style="background:var(--red)">
-          <div class="linkedin-stat-num">6+</div>
-          <div class="linkedin-stat-label">Years Experience</div>
-        </div>
-        <div class="linkedin-stat" style="background:var(--mint)">
-          <div class="linkedin-stat-num">60fps</div>
-          <div class="linkedin-stat-label">Ships UI at</div>
-        </div>
-        <div class="linkedin-stat" style="background:var(--purple)">
-          <div class="linkedin-stat-num">SDE3</div>
-          <div class="linkedin-stat-label">Current Level</div>
-        </div>
-        <div class="linkedin-stat wide" style="background:var(--yellow);color:var(--ink)">
-          <div style="font-size:40px">🏆</div>
-          <div>
-            <div class="linkedin-stat-num">Star Employee</div>
-            <div class="linkedin-stat-label" style="color:var(--ink-soft)">
-              Awarded at Gyaan AI · Frontend Excellence · 2024
-            </div>
+      <div class="acm-body">
+        <div class="acm-left">
+          <div class="acm-fallback">
+            <span class="medal" aria-hidden="true">🎉</span>
+            <h3>Nov 2023 · CodeClouds</h3>
+            <p>A milestone I'm genuinely proud of — public recognition for consistent delivery and real, measurable impact on how the team shipped.</p>
+            <a class="go" href="${LINKEDIN_PROFILE}" target="_blank" rel="noopener">
+              <span class="in">in</span> Open LinkedIn ↗
+            </a>
           </div>
+        </div>
+        <div class="acm-right">
+          <span class="eyebrow">🏆 Nov 2023 · CodeClouds</span>
+          <h3>Outstanding Performance Award</h3>
+          <p>Recognition for <b>consistent delivery</b> and real, measurable impact on how the team shipped.</p>
+          <div class="acm-pts">
+            <div class="acm-pt">Built a reusable scaffold that cut new-project setup time by <b>45%</b>.</div>
+            <div class="acm-pt">Mentored junior devs in React &amp; modern JavaScript.</div>
+            <div class="acm-pt">Raised the bar on code reviews and delivery quality.</div>
+          </div>
+          <p>Beyond the trophy, it's the kind of teamwork and momentum I love being part of — and a reminder of why I do this work.</p>
+          <a class="go" href="${LINKEDIN_PROFILE}" target="_blank" rel="noopener">
+            <span class="in">in</span> View on LinkedIn ↗
+          </a>
         </div>
       </div>
     </div>
   `;
-  document.body.appendChild(overlay);
+  document.body.appendChild(modal);
 
-  function openModal() {
-    overlay.classList.add('open');
+  function open() {
+    modal.classList.add('open');
     document.body.style.overflow = 'hidden';
-    overlay.querySelector('.modal-chrome-close button').focus();
+    modal.querySelector('.acm-close').focus();
   }
-  function closeModal() {
-    overlay.classList.remove('open');
+  function close() {
+    modal.classList.remove('open');
     document.body.style.overflow = '';
   }
 
-  awardCard.addEventListener('click', openModal);
-  awardCard.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
-  });
-  overlay.querySelector('.modal-chrome-close button').addEventListener('click', closeModal);
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  award.addEventListener('click', open);
+  modal.querySelector('.acm-close').addEventListener('click', close);
+  modal.querySelector('.acm-bg').addEventListener('click', close);
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    if (e.key === 'Escape' && modal.classList.contains('open')) close();
   });
-
-  /* Counter animation for metric numbers */
-  const counters = document.querySelectorAll('.metric-num[data-count]');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el  = entry.target;
-      const end = parseFloat(el.dataset.count);
-      const suffix = el.dataset.suffix || '';
-      let start = 0;
-      const step = end / 40;
-      const timer = setInterval(() => {
-        start = Math.min(start + step, end);
-        el.textContent = (Number.isInteger(end) ? Math.round(start) : start.toFixed(1)) + suffix;
-        if (start >= end) clearInterval(timer);
-      }, 30);
-      io.unobserve(el);
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(c => io.observe(c));
 }

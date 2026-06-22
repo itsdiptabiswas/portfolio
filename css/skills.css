@@ -1,180 +1,119 @@
 .skills {
-  padding: var(--sp-xl) var(--sp-md);
+  padding: 120px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.skills-layout {
+.skills-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-lg);
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
   align-items: start;
 }
 
-/* Nutrition label card */
-.skills-label {
-  background: var(--cream);
+/* ── Skill Facts label card ── */
+.nf-label {
+  background: var(--paper);
   border: 3px solid var(--ink);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
-  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--ink);
+  padding: 20px 22px;
+  transform: rotate(-1.2deg);
 }
-
-.skills-label-header {
-  background: var(--ink);
-  color: var(--cream);
-  padding: 20px 28px;
-}
-.skills-label-header h2 {
+.nf-label h3 {
   font-family: var(--font-display);
-  font-size: 32px;
-  color: var(--cream);
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 0.9;
+  border-bottom: 8px solid var(--ink);
+  padding-bottom: 6px;
 }
-.skills-label-header p {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  opacity: 0.6;
-  margin-top: 4px;
+.nf-serv {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--ink);
 }
+.nf-serv.bold { font-weight: 700; }
+.nf-thick { height: 8px; background: var(--ink); margin: 4px 0; }
 
-.skills-divider {
-  height: 3px;
-  background: var(--ink);
-}
-.skills-divider.thick { height: 8px; }
-
-.skills-rows {
-  padding: 0 28px;
-}
-
-.skill-row {
+.nf-rows { font-family: var(--font-body); }
+.nf-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-.skill-row:last-child { border-bottom: none; }
-
-.skill-name {
-  font-family: var(--font-mono);
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
   font-size: 13px;
-  font-weight: 700;
-  width: 120px;
-  flex-shrink: 0;
 }
-
-.skill-bar-track {
+.nf-row .l { font-weight: 700; }
+.nf-row .bar {
   flex: 1;
-  height: 10px;
-  background: rgba(0,0,0,0.08);
-  border-radius: var(--radius-pill);
+  height: 7px;
+  background: var(--cream-2);
+  border-radius: 6px;
+  margin: 0 8px;
   overflow: hidden;
 }
-
-.skill-bar-fill {
+.nf-row .bar i {
+  display: block;
   height: 100%;
-  border-radius: var(--radius-pill);
-  width: 0%;
-  transition: width 1.2s var(--ease-out);
+  background: var(--red);
+  border-radius: 6px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(.2,.8,.2,1);
 }
-
-.skill-pct {
+.nf-row .v {
   font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 700;
-  width: 36px;
+  min-width: 38px;
   text-align: right;
-  flex-shrink: 0;
 }
-
-/* Right side */
-.skills-right {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-md);
-}
-
-.skills-tagline {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 60px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.03em;
-}
-.skills-tagline em {
-  font-style: normal;
-  color: var(--red);
-}
-
-.skills-tagline-sub {
-  font-size: 15px;
+.nf-foot {
+  font-size: 10px;
   color: var(--ink-soft);
-  line-height: 1.6;
-  max-width: 400px;
+  margin-top: 10px;
+  line-height: 1.4;
 }
 
-/* Ingredients cloud */
-.skills-ingredients {
+/* ── Ingredients side ── */
+.nf-side h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.nf-side .lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+.nf-side .lead b { color: var(--ink); font-weight: 600; }
+.nf-ing { display: flex; flex-wrap: wrap; gap: 10px; }
+.ing {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 8px 14px;
+  border-radius: 100px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+  opacity: 0;
+  transform: translateY(12px);
+}
+.ing.show { opacity: 1; transform: translateY(0); }
+.ing:hover {
   background: var(--ink);
   color: var(--cream);
-  border-radius: var(--radius-xl);
-  padding: var(--sp-md);
-}
-.ingredients-title {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  opacity: 0.5;
-  margin-bottom: 12px;
-}
-.ingredients-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.chip {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid rgba(255,255,255,0.2);
-  opacity: 0;
-  transform: scale(0.85);
-  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-bounce),
-              background var(--dur-fast), border-color var(--dur-fast);
-}
-.chip.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-.chip:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-4px) rotate(-2deg);
 }
 
-/* Years badge */
-.skills-years {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-sm);
-}
-.years-badge {
-  font-family: var(--font-display);
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--red);
-}
-.years-label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 1.4;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-@media (max-width: 900px) {
-  .skills-layout { grid-template-columns: 1fr; }
+@media (max-width: 860px) {
+  .skills-grid { grid-template-columns: 1fr; }
 }

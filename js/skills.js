@@ -1,33 +1,31 @@
 /**
- * Skill bars: animate scaleX on scroll into view.
- * Chip cloud: staggered fade-in.
+ * Skill Facts bars (scaleX) + ingredient chips staggered reveal.
  */
 export function initSkills() {
-  /* Skill bars */
-  const bars = document.querySelectorAll('.skill-bar-fill');
+  const section = document.getElementById('skills');
+  if (!section) return;
+
+  const bars = section.querySelectorAll('.nf-row .bar i');
+  const chips = section.querySelectorAll('.ing');
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const bar = entry.target;
-      bar.style.width = bar.dataset.pct + '%';
-      io.unobserve(bar);
-    });
-  }, { threshold: 0.3 });
 
-  bars.forEach(bar => io.observe(bar));
-
-  /* Ingredient chips — staggered */
-  const chips = document.querySelectorAll('.chip');
-  const chipIo = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      chips.forEach((chip, i) => {
-        setTimeout(() => chip.classList.add('visible'), i * 40);
+      bars.forEach((bar, i) => {
+        const pct = parseInt(bar.dataset.pct, 10) / 100;
+        bar.style.transitionDelay = `${i * 70}ms`;
+        bar.style.transform = `scaleX(${pct})`;
       });
-      chipIo.disconnect();
+
+      chips.forEach((chip, i) => {
+        chip.style.transitionDelay = `${i * 40}ms`;
+        chip.classList.add('show');
+      });
+
+      io.disconnect();
     });
   }, { threshold: 0.2 });
 
-  const cloud = document.querySelector('.ingredients-chips');
-  if (cloud) chipIo.observe(cloud);
+  io.observe(section);
 }
