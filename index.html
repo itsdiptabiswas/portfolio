@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<!-- Primary SEO -->
+<title>Dipta Biswas | Senior Frontend Engineer · React · TypeScript · SDE3 | Pune, India</title>
+<meta name="title" content="Dipta Biswas | Senior Frontend Engineer · React · TypeScript · SDE3" />
+<meta name="description" content="Dipta Biswas (itsdiptabiswas) — Senior Frontend Engineer (SDE3) with 5.5+ years building blazing-fast web apps. Expert in React, TypeScript, TanStack, Next.js, and the MERN stack. Open to remote-first roles." />
+<meta name="keywords" content="Dipta Biswas, diptabiswas, itsdiptabiswas, dipta, dipta biswas developer, Senior Frontend Engineer, React Developer, TypeScript, Next.js, TanStack, SDE3, MERN stack, Pune India, Full Stack Developer, JavaScript Engineer" />
+<meta name="author" content="Dipta Biswas" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#FBF1DE" />
+<link rel="canonical" href="https://itsdiptabiswas.github.io/portfolio/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://itsdiptabiswas.github.io/portfolio/" />
+<meta property="og:title" content="Dipta Biswas | Senior Frontend Engineer" />
+<meta property="og:description" content="Senior Frontend Engineer (SDE3) building 60fps interfaces. React, TypeScript, TanStack, MERN. Based in Pune, India. Open to remote roles." />
+<meta property="og:site_name" content="Dipta Biswas Portfolio" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@BiswasDipta23" />
+<meta name="twitter:creator" content="@BiswasDipta23" />
+<meta name="twitter:title" content="Dipta Biswas | Senior Frontend Engineer" />
+<meta name="twitter:description" content="Senior Frontend Engineer (SDE3) building 60fps interfaces. React, TypeScript, TanStack, MERN. Based in Pune, India." />
+
+<!-- Structured Data: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dipta Biswas",
+  "alternateName": ["itsdiptabiswas", "diptabiswas", "Dipta"],
+  "jobTitle": "Senior Frontend Engineer",
+  "description": "Senior Frontend Engineer (SDE3) with 5.5+ years building fast, scalable web applications using React, TypeScript, and the MERN stack.",
+  "url": "https://itsdiptabiswas.github.io/portfolio/",
+  "email": "jobs.diptabiswas@gmail.com",
+  "telephone": "+918918940615",
+  "sameAs": [
+    "https://github.com/itsdiptabiswas",
+    "https://linkedin.com/in/dipta-biswas",
+    "https://twitter.com/BiswasDipta23"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "B.Tech Information Technology, 2020"
+  },
+  "knowsAbout": ["React", "TypeScript", "Next.js", "TanStack", "Node.js", "MongoDB", "AWS", "Redux", "SCSS", "Docker"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Gyaan AI (MaxIq)"
+  }
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Three.js -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" crossorigin="anonymous"></script>
+
+<!-- React 18 -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-9YSMV5MMBFkHXIc5E5EUBMVhSEbTbhliHxDG4dBqRe5Tk4X42iqkH2z21MvqEHKC" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-aNPnBFkbv5kl2hTNaBqxJXBdcvx79dMmXqNJN0sDYrNsQ8F7xFqZLb2FaH9wBxVR" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+  /* ─── Design Tokens ─────────────────────────────────────── */
+  :root {
+    --cream: #FBF1DE;
+    --cream-2: #FCEAC8;
+    --ink: #2C2016;
+    --ink-soft: #6B5842;
+    --red: #FF5A3C;
+    --yellow: #FFC53A;
+    --mint: #2FB783;
+    --blue: #3B7DFF;
+    --purple: #8B5CF6;
+    --paper: #FFFCF5;
+    --line: #E7D6B6;
+    --shadow: rgba(44,32,22,0.14);
+    --radius: 22px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  ::selection { background: var(--red); color: var(--cream); }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  img { display: block; max-width: 100%; }
+
+  /* Dotted paper texture */
+  body::before {
+    content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: radial-gradient(var(--line) 1px, transparent 1px);
+    background-size: 26px 26px; opacity: 0.45;
+  }
+
+  #root { position: relative; z-index: 1; }
+
+  /* ─── Loader ────────────────────────────────────────────── */
+  #loader {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--ink); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 20px;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+  }
+  #loader.out { opacity: 0; visibility: hidden; }
+  #loader-logo {
+    font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 32px;
+    color: var(--cream); letter-spacing: -0.02em;
+  }
+  #loader-logo span { color: var(--red); }
+  #loader-bar-wrap {
+    width: 200px; height: 4px; background: rgba(255,255,255,0.12); border-radius: 4px; overflow: hidden;
+  }
+  #loader-bar {
+    height: 100%; background: var(--red); border-radius: 4px;
+    width: 0%; transition: width 0.05s linear;
+  }
+  #loader-txt {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    color: rgba(255,255,255,0.4); letter-spacing: 0.1em;
+  }
+
+  /* ─── Nav ───────────────────────────────────────────────── */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 32px;
+    background: transparent;
+    transition: background 0.3s, backdrop-filter 0.3s;
+  }
+  .nav.scrolled {
+    background: rgba(251,241,222,0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo {
+    font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 18px;
+    letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px;
+  }
+  .nav-logo-chip {
+    background: var(--red); color: var(--cream); width: 26px; height: 26px;
+    border-radius: 8px; display: grid; place-items: center; font-size: 14px;
+    transform: rotate(-6deg); transition: transform 0.3s;
+  }
+  .nav-logo:hover .nav-logo-chip { transform: rotate(6deg); }
+  .nav-links { display: flex; gap: 22px; align-items: center; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.04em;
+    opacity: 0.7; transition: opacity 0.2s; text-transform: uppercase;
+  }
+  .nav-links a:hover { opacity: 1; }
+  .nav-pill {
+    background: var(--ink); color: var(--cream); padding: 8px 18px;
+    border-radius: 100px; opacity: 1 !important; transition: background 0.2s !important;
+    font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .nav-pill:hover { background: var(--red) !important; }
+  .nav-hamburger {
+    display: none; width: 32px; height: 24px; flex-direction: column;
+    justify-content: space-between; cursor: pointer;
+    background: none; border: none; padding: 0;
+  }
+  .nav-hamburger span {
+    display: block; width: 100%; height: 2px; background: var(--ink);
+    border-radius: 2px; transition: all 0.3s;
+  }
+  .nav-mobile {
+    display: none; position: fixed; inset: 0; z-index: 49;
+    background: var(--cream); flex-direction: column;
+    align-items: center; justify-content: center; gap: 32px;
+    padding: 24px;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 36px;
+    color: var(--ink); opacity: 0.85; transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-mobile a:hover { opacity: 1; color: var(--red); }
+  .nav-mobile-close {
+    position: absolute; top: 24px; right: 32px;
+    font-size: 28px; color: var(--ink); opacity: 0.6;
+    cursor: pointer; background: none; border: none; font-family: inherit;
+  }
+
+  /* ─── Hero ──────────────────────────────────────────────── */
+  .hero-wrap { position: relative; height: 340vh; }
+  .hero-pin {
+    position: sticky; top: 0; height: 100vh; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #three-canvas {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    z-index: 0; pointer-events: none;
+  }
+  .hero-bg-blob {
+    position: absolute; width: 720px; height: 720px; border-radius: 50%;
+    background: radial-gradient(circle, var(--yellow), transparent 62%);
+    opacity: 0.4; filter: blur(20px); top: 50%; left: 50%;
+    transform: translate(-50%, -50%); z-index: 1;
+    animation: blobpulse 8s ease-in-out infinite;
+  }
+  @keyframes blobpulse { 0%,100%{transform:translate(-50%,-50%) scale(1);} 50%{transform:translate(-50%,-50%) scale(1.1);} }
+  .hero-caption {
+    position: absolute; left: 7vw; top: 50%; transform: translateY(-50%);
+    max-width: 460px; z-index: 4; pointer-events: none;
+  }
+  .hero-stage { transition: opacity 0.5s ease, transform 0.5s ease; }
+  .hero-kicker {
+    font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 8px;
+  }
+  .hero-big {
+    font-family: 'Fredoka', sans-serif; font-weight: 700;
+    font-size: clamp(52px, 7.5vw, 100px); line-height: 0.9;
+    letter-spacing: -0.03em; margin-bottom: 18px;
+  }
+  .hero-sub { font-size: 19px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 22px; }
+  .hero-tag {
+    font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.1em;
+    color: var(--ink); background: var(--paper); border: 1px solid var(--line);
+    display: inline-block; padding: 8px 14px; border-radius: 100px;
+    animation: tagpulse 3s ease-in-out infinite;
+  }
+  @keyframes tagpulse { 0%,100%{box-shadow:0 0 0 0 rgba(255,90,60,0);} 50%{box-shadow:0 0 0 6px rgba(255,90,60,0.12);} }
+  .hero-badges {
+    position: absolute; right: 6vw; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 14px; z-index: 4;
+  }
+  .hero-badge {
+    background: var(--paper); border: 2px solid var(--ink); border-radius: 14px;
+    padding: 12px 16px; box-shadow: 4px 4px 0 var(--ink); width: 180px;
+  }
+  .hero-badge.accent { background: var(--red); color: var(--cream); }
+  .hero-badge.accent span { color: rgba(255,255,255,0.85); }
+  .hero-badge b { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 26px; display: block; }
+  .hero-badge span { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; }
+  .scroll-rail {
+    position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+    z-index: 5; display: flex; flex-direction: column; align-items: center; gap: 8px;
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ink-soft);
+  }
+  .scroll-rail-bar { width: 2px; height: 40px; background: var(--line); border-radius: 2px; overflow: hidden; }
+  .scroll-rail-fill {
+    width: 100%; background: var(--red); border-radius: 2px;
+    transform-origin: top; transform: scaleY(0); height: 100%;
+  }
+
+  /* ─── 3D Box ─────────────────────────────────────────────── */
+  .scene {
+    position: absolute; inset: 0;
+    perspective: 1600px; perspective-origin: 50% 45%;
+    pointer-events: none; z-index: 2;
+  }
+  .box3d {
+    position: absolute; left: 50%; top: 50%;
+    --bw: 300px; --bh: 420px; --bd: 126px;
+    width: var(--bw); height: var(--bh);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .face {
+    position: absolute; backface-visibility: hidden;
+    border-radius: 10px; overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+  }
+  .face.front, .face.back { width: var(--bw); height: var(--bh); left: 0; top: 0; }
+  .face.front { transform: translateZ(calc(var(--bd) / 2)); }
+  .face.back  { transform: rotateY(180deg) translateZ(calc(var(--bd) / 2)); }
+  .face.right, .face.left { width: var(--bd); height: var(--bh); left: calc(var(--bw)/2 - var(--bd)/2); top: 0; }
+  .face.right { transform: rotateY(90deg)  translateZ(calc(var(--bw) / 2)); }
+  .face.left  { transform: rotateY(-90deg) translateZ(calc(var(--bw) / 2)); }
+  .face.top, .face.bottom { width: var(--bw); height: var(--bd); left: 0; top: calc(var(--bh)/2 - var(--bd)/2); }
+  .face.top    { transform: rotateX(90deg)  translateZ(calc(var(--bh) / 2)); }
+  .face.bottom { transform: rotateX(-90deg) translateZ(calc(var(--bh) / 2)); }
+
+  /* Front face */
+  .bf {
+    width: 100%; height: 100%;
+    background: linear-gradient(165deg, var(--red) 0%, color-mix(in srgb, var(--red) 78%, #FFC53A) 70%, color-mix(in srgb, var(--red) 60%, #FFC53A) 100%);
+    color: var(--cream); padding: 20px 18px; display: flex; flex-direction: column; position: relative;
+  }
+  .bf-top {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em;
+    text-transform: uppercase; opacity: 0.9;
+  }
+  .bf-badge { background: var(--yellow); color: var(--ink); border-radius: 100px; padding: 3px 8px; font-weight: 500; }
+  .bf-brand {
+    font-family: 'Fredoka', sans-serif; font-weight: 700;
+    font-size: 42px; line-height: 0.86; letter-spacing: -0.02em; margin-top: 12px;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.12);
+  }
+  .bf-brand .pop { color: var(--yellow); display: block; }
+  .bf-sub { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.05em; margin-top: 8px; opacity: 0.95; }
+  .bf-bowl { margin-top: auto; align-self: center; width: 180px; height: 110px; position: relative; }
+  .bf-bowl .bowl {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 72px;
+    background: var(--cream); border-radius: 0 0 100px 100px;
+    box-shadow: inset 0 -8px 0 rgba(0,0,0,0.06);
+  }
+  .bf-bowl .milk { position: absolute; bottom: 52px; left: 8px; right: 8px; height: 28px; background: #FFF6E6; border-radius: 50%; }
+  .bf-bowl .o { position: absolute; width: 20px; height: 20px; border-radius: 50%; border: 5px solid var(--yellow); }
+  .bf-flag {
+    position: absolute; bottom: 14px; right: -6px; background: var(--ink); color: var(--cream);
+    font-family: 'DM Mono', monospace; font-size: 8px; padding: 3px 8px; border-radius: 6px; transform: rotate(-6deg);
+  }
+  .bf-net { font-family: 'DM Mono', monospace; font-size: 9px; text-align: center; margin-top: 8px; letter-spacing: 0.15em; opacity: 0.9; }
+
+  /* Side / Back / Top / Bottom faces */
+  .bside {
+    width: 100%; height: 100%;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--red) 92%, #000), color-mix(in srgb, var(--red) 68%, #000));
+    color: var(--cream); padding: 16px 9px; display: flex; flex-direction: column; gap: 7px;
+  }
+  .bside h5 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.04em; }
+  .bside .row {
+    font-family: 'DM Mono', monospace; font-size: 8px; line-height: 1.5;
+    display: flex; justify-content: space-between;
+    border-bottom: 1px dashed rgba(255,255,255,0.25); padding-bottom: 3px;
+  }
+  .bback {
+    width: 100%; height: 100%;
+    background: linear-gradient(180deg, var(--cream), var(--cream-2));
+    color: var(--ink); padding: 20px 18px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .bback h4 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 20px; }
+  .bback p { font-size: 10.5px; line-height: 1.5; color: var(--ink-soft); }
+  .bback .fact {
+    font-family: 'DM Mono', monospace; font-size: 8.5px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 5px 7px;
+  }
+  .btb {
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--red) 80%, #000), var(--red));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--cream); font-family: 'Fredoka', sans-serif; font-weight: 600;
+    font-size: 12px; letter-spacing: 0.15em;
+  }
+  .box-floor {
+    position: absolute; left: 50%; top: 50%;
+    width: 340px; height: 70px; transform: translate(-50%, 228px) rotateX(80deg);
+    background: radial-gradient(ellipse, rgba(44,32,22,0.26), transparent 70%);
+    filter: blur(8px); border-radius: 50%;
+  }
+
+  /* ─── Section Shared ─────────────────────────────────────── */
+  .sec { padding: 100px 32px 120px; max-width: 1200px; margin: 0 auto; }
+  .sec-tag {
+    font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sec-tag::before { content: ''; width: 30px; height: 2px; background: var(--red); }
+  .sec-head {
+    font-family: 'Fredoka', sans-serif; font-weight: 700;
+    font-size: clamp(32px, 5vw, 58px); line-height: 1.02;
+    letter-spacing: -0.02em; margin-bottom: 50px;
+  }
+  .sec-head em { color: var(--red); font-style: normal; }
+
+  /* ─── Skills ─────────────────────────────────────────────── */
+  .sk-grid { display: grid; grid-template-columns: 380px 1fr; gap: 40px; align-items: start; }
+  .sk-label {
+    background: var(--paper); border: 3px solid var(--ink); border-radius: 16px;
+    box-shadow: 8px 8px 0 var(--ink); padding: 20px 22px; transform: rotate(-1.2deg);
+  }
+  .sk-label h3 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 32px; line-height: 0.9; border-bottom: 8px solid var(--ink); padding-bottom: 6px; }
+  .sk-serv { display: flex; justify-content: space-between; font-size: 12px; padding: 6px 0; border-bottom: 1px solid var(--ink); }
+  .sk-serv.bold { font-weight: 700; }
+  .sk-thick { height: 8px; background: var(--ink); margin: 4px 0; }
+  .sk-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13px;
+  }
+  .sk-row .l { font-weight: 700; font-size: 13px; }
+  .sk-row .bar { flex: 1; height: 7px; background: var(--cream-2); border-radius: 6px; margin: 0 8px; overflow: hidden; }
+  .sk-row .bar i {
+    display: block; height: 100%; background: var(--red); border-radius: 6px;
+    transform: scaleX(0); transform-origin: left; transition: transform 0.9s cubic-bezier(.2,.8,.2,1);
+  }
+  .sk-row .v { font-family: 'DM Mono', monospace; font-size: 12px; min-width: 38px; text-align: right; }
+  .sk-foot { font-size: 10px; color: var(--ink-soft); margin-top: 10px; line-height: 1.4; }
+  .sk-side h4 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 22px; margin-bottom: 14px; }
+  .sk-lead { font-size: 17px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 28px; max-width: 560px; }
+  .sk-lead b { color: var(--ink); font-weight: 600; }
+  .sk-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .sk-chip {
+    font-family: 'DM Mono', monospace; font-size: 12px; padding: 8px 14px; border-radius: 100px;
+    background: var(--paper); border: 2px solid var(--ink);
+    transition: transform 0.2s, background 0.2s, color 0.2s;
+    opacity: 0; transform: translateY(12px);
+  }
+  .sk-chip.show { opacity: 1; transform: translateY(0); }
+  .sk-chip:hover { background: var(--ink); color: var(--cream); transform: translateY(-4px) rotate(-2deg); }
+
+  /* ─── Projects ───────────────────────────────────────────── */
+  .pj-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .pj-card {
+    text-align: left; background: var(--paper); border: 3px solid var(--ink); border-radius: 22px;
+    overflow: hidden; box-shadow: 6px 6px 0 var(--ink); cursor: pointer;
+    transition: transform 0.25s cubic-bezier(.2,.8,.2,1), box-shadow 0.25s;
+    opacity: 0; transform: translateY(24px);
+  }
+  .pj-card.show { opacity: 1; transform: translateY(0); }
+  .pj-card:hover { transform: translateY(-6px) rotate(-0.5deg); box-shadow: 12px 12px 0 var(--ink); }
+  .pj-card-top {
+    background: var(--cc); color: var(--cream); padding: 26px 28px; position: relative;
+    min-height: 140px;
+  }
+  .pj-vbadge { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; background: rgba(0,0,0,0.2); padding: 5px 10px; border-radius: 100px; display: inline-block; }
+  .pj-vemo { position: absolute; top: 18px; right: 24px; font-size: 54px; opacity: 0.3; line-height: 1; }
+  .pj-vname { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 38px; line-height: 0.95; letter-spacing: -0.02em; margin-top: 14px; }
+  .pj-vflavor { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.1em; margin-top: 6px; text-transform: uppercase; opacity: 0.92; }
+  .pj-card-body { padding: 22px 28px 26px; }
+  .pj-card-desc {
+    font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 16px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .pj-card-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+  .pj-card-stack span { font-family: 'DM Mono', monospace; font-size: 11px; padding: 4px 10px; border-radius: 100px; border: 1.5px solid var(--ink); }
+  .pj-card-cta { display: flex; align-items: center; justify-content: space-between; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; }
+  .pj-arrow { background: var(--red); color: var(--cream); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-size: 16px; transition: transform 0.25s; }
+  .pj-card:hover .pj-arrow { transform: translateX(4px) rotate(-12deg); }
+
+  /* Project Modal */
+  .pjm {
+    position: fixed; inset: 0; z-index: 300;
+    display: flex; align-items: center; justify-content: center;
+    padding: 3vh 3vw;
+  }
+  .pjm-bg {
+    position: absolute; inset: 0;
+    background: rgba(44,32,22,0.6); backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    animation: pjmfade .3s ease;
+  }
+  @keyframes pjmfade { from{opacity:0;} to{opacity:1;} }
+  .pjm-panel {
+    position: relative; width: min(1080px, 100%); height: min(85vh, 700px);
+    display: flex; flex-direction: column;
+    background: var(--paper); border: 3px solid var(--ink); border-radius: 22px;
+    overflow: hidden; box-shadow: 16px 16px 0 var(--ink);
+    animation: pjmpop .42s cubic-bezier(.2,.9,.3,1.3);
+  }
+  .pjm.closing .pjm-panel { animation: pjmout .3s ease forwards; }
+  .pjm.closing .pjm-bg { animation: pjmfade .3s ease reverse forwards; }
+  @keyframes pjmpop { from{transform:translateY(30px) scale(.92);opacity:.4;} to{transform:none;opacity:1;} }
+  @keyframes pjmout { to{transform:scale(.96);opacity:0;} }
+  .pjm-bar {
+    display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+    background: var(--cc); color: var(--cream); flex-shrink: 0;
+  }
+  .pjm-dots { display: flex; gap: 7px; }
+  .pjm-dots span { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); display: block; }
+  .pjm-url {
+    flex: 1; background: rgba(0,0,0,0.2); border-radius: 8px;
+    padding: 7px 12px; font-family: 'DM Mono', monospace; font-size: 12px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .pjm-close {
+    width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.2); color: var(--cream);
+    font-size: 15px; display: grid; place-items: center;
+    transition: background 0.2s, transform 0.2s; flex-shrink: 0;
+  }
+  .pjm-close:hover { background: var(--ink); transform: rotate(90deg); }
+  .pjm-body { flex: 1; overflow: auto; position: relative; }
+  .pjm-frame { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
+  .pjm-preview { padding: 40px; }
+  .pjm-ph { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 40px; line-height: 0.95; margin-bottom: 6px; }
+  .pjm-pf { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 22px; }
+  .pjm-pd { font-size: 16.5px; line-height: 1.65; color: var(--ink); max-width: 680px; margin-bottom: 22px; }
+  .pjm-ps { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+  .pjm-ps span { font-family: 'DM Mono', monospace; font-size: 12px; padding: 6px 13px; border-radius: 100px; border: 1.5px solid var(--ink); }
+  .pjm-demo {
+    border: 2px dashed var(--ink); border-radius: 16px; padding: 30px; text-align: center;
+    background: repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(44,32,22,0.04) 12px, rgba(44,32,22,0.04) 13px);
+  }
+  .pjm-demo .big { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 22px; margin-bottom: 8px; }
+  .pjm-demo p { font-size: 14px; color: var(--ink-soft); line-height: 1.5; max-width: 460px; margin: 0 auto 20px; }
+  .pjm-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .pjm-cta {
+    font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px;
+    padding: 13px 24px; border-radius: 100px; border: 2.5px solid var(--ink);
+    transition: transform 0.2s, box-shadow 0.2s; box-shadow: 4px 4px 0 var(--ink);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .pjm-cta:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+  .pjm-cta.primary { background: var(--red); color: var(--cream); }
+  .pjm-cta.ghost { background: var(--paper); color: var(--ink); }
+  .pjm-iframe-note {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    text-align: center; padding: 24px; pointer-events: none;
+    font-family: 'DM Mono', monospace; font-size: 13px; color: var(--ink-soft);
+    opacity: 0; transition: opacity 0.3s;
+  }
+
+  /* ─── Story ──────────────────────────────────────────────── */
+  .st-list { display: flex; flex-direction: column; gap: 22px; }
+  .st-card {
+    background: var(--paper); border: 2px solid var(--ink); border-radius: 18px;
+    box-shadow: 6px 6px 0 var(--ink); padding: 26px 28px; position: relative;
+    transition: transform 0.25s, box-shadow 0.25s;
+    opacity: 0; transform: translateX(-20px);
+  }
+  .st-card.show { opacity: 1; transform: translateX(0); }
+  .st-card:hover { transform: translate(-2px,-2px); box-shadow: 9px 9px 0 var(--ink); }
+  .st-card::before {
+    content: ''; position: absolute; left: 0; top: 24px; bottom: 24px; width: 6px;
+    background: var(--c); border-radius: 0 6px 6px 0;
+  }
+  .st-top {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    flex-wrap: wrap; margin-bottom: 6px; padding-left: 14px;
+  }
+  .st-co { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 24px; }
+  .st-when { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--ink-soft); }
+  .st-where { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-soft); }
+  .st-role { font-size: 15px; font-weight: 600; color: var(--c); padding-left: 14px; margin-bottom: 14px; }
+  .st-pts { padding-left: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .st-pt { font-size: 14.5px; line-height: 1.5; color: var(--ink); display: flex; gap: 10px; }
+  .st-pt::before { content: '▸'; color: var(--c); flex-shrink: 0; }
+
+  /* ─── Achievements ───────────────────────────────────────── */
+  .ac-award {
+    display: flex; align-items: center; gap: 28px; background: var(--ink); color: var(--cream);
+    border-radius: 22px; padding: 32px 36px; margin-bottom: 36px; position: relative; overflow: hidden;
+    box-shadow: 8px 8px 0 var(--red); cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s; border: none; text-align: left; width: 100%;
+  }
+  .ac-award:hover { transform: translate(-2px,-2px); box-shadow: 11px 11px 0 var(--red); }
+  .ac-award-medal { font-size: 70px; flex-shrink: 0; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); animation: swing 4s ease-in-out infinite; transform-origin: top center; }
+  @keyframes swing { 0%,100%{transform:rotate(-7deg);} 50%{transform:rotate(7deg);} }
+  .ac-award h3 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 28px; margin-bottom: 6px; }
+  .ac-award p { font-size: 15px; line-height: 1.5; opacity: 0.85; max-width: 620px; }
+  .ac-award-yr {
+    position: absolute; top: 18px; right: 24px; font-family: 'DM Mono', monospace; font-size: 12px;
+    background: var(--red); color: var(--cream); padding: 4px 12px; border-radius: 100px;
+  }
+  .ac-hint {
+    position: absolute; bottom: 18px; right: 24px; font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 0.08em; color: var(--cream); opacity: 0.55;
+    display: flex; align-items: center; gap: 6px; transition: opacity 0.2s;
+  }
+  .ac-award:hover .ac-hint { opacity: 1; }
+  .ac-hint-in {
+    background: #0A66C2; color: #fff; width: 18px; height: 18px; border-radius: 4px;
+    display: grid; place-items: center; font-weight: 700; font-size: 11px;
+  }
+  .ac-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .ac-metric {
+    border-radius: 18px; padding: 26px 24px; color: var(--cream); position: relative; overflow: hidden;
+    opacity: 0; transform: translateY(20px) scale(0.96);
+    transition: opacity 0.5s, transform 0.5s cubic-bezier(.2,.8,.2,1);
+  }
+  .ac-metric.show { opacity: 1; transform: translateY(0) scale(1); }
+  .ac-metric:hover { transform: translateY(-6px) rotate(-1.5deg); }
+  .ac-metric b { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 50px; line-height: 1; display: block; margin-bottom: 6px; }
+  .ac-metric span { font-size: 14px; opacity: 0.95; line-height: 1.4; display: block; max-width: 90%; }
+  .ac-metric::after { content: var(--emo); position: absolute; right: -8px; bottom: -14px; font-size: 68px; opacity: 0.2; }
+  .ac-metric.r { background: var(--red); }
+  .ac-metric.g { background: var(--mint); }
+  .ac-metric.b { background: var(--blue); }
+  .ac-metric.p { background: var(--purple); }
+
+  /* Award Modal */
+  .acm {
+    position: fixed; inset: 0; z-index: 320;
+    display: flex; align-items: center; justify-content: center; padding: 4vh 4vw;
+  }
+  .acm-bg { position: absolute; inset: 0; background: rgba(44,32,22,0.55); backdrop-filter: blur(4px); animation: pjmfade .3s ease; }
+  .acm-panel {
+    position: relative; width: min(940px, 100%); max-height: 92vh; display: flex; flex-direction: column;
+    background: var(--paper); border: 3px solid var(--ink); border-radius: 22px;
+    overflow: hidden; box-shadow: 16px 16px 0 var(--ink);
+    animation: pjmpop .42s cubic-bezier(.2,.9,.3,1.3);
+  }
+  .acm.closing .acm-panel { animation: pjmout .3s ease forwards; }
+  .acm-bar { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: #0A66C2; color: #fff; flex-shrink: 0; }
+  .acm-bar .in { background: #fff; color: #0A66C2; width: 26px; height: 26px; border-radius: 6px; display: grid; place-items: center; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+  .acm-bar b { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16px; flex: 1; }
+  .acm-close { width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.25); color: #fff; font-size: 14px; display: grid; place-items: center; transition: background .2s, transform .2s; flex-shrink: 0; }
+  .acm-close:hover { background: rgba(0,0,0,0.3); transform: rotate(90deg); }
+  .acm-body { display: grid; grid-template-columns: 1.25fr 1fr; min-height: 0; flex: 1; }
+  .acm-left { border-right: 2px solid var(--ink); min-height: 480px; display: flex; }
+  .acm-right { padding: 30px; display: flex; flex-direction: column; gap: 16px; overflow: auto; }
+  .acm-right .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
+  .acm-right h3 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.05; }
+  .acm-right p { font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
+  .acm-right p b { color: var(--ink); font-weight: 600; }
+  .acm-pts { display: flex; flex-direction: column; gap: 10px; margin-top: 2px; }
+  .acm-pt { font-size: 14px; line-height: 1.5; color: var(--ink); display: flex; gap: 10px; }
+  .acm-pt::before { content: '✓'; color: var(--mint); font-weight: 700; flex-shrink: 0; }
+  .acm-go {
+    margin-top: auto; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px;
+    padding: 12px 20px; border-radius: 100px; background: #0A66C2; color: #fff;
+    display: inline-flex; align-items: center; gap: 8px; border: 2.5px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink); transition: transform .2s, box-shadow .2s; align-self: flex-start;
+  }
+  .acm-go:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+  .acm-fallback {
+    flex: 1; padding: 40px 30px; text-align: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .acm-fallback .medal { font-size: 64px; animation: swing 4s ease-in-out infinite; transform-origin: top center; display: inline-block; }
+  .acm-fallback h3 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 24px; margin: 14px 0 8px; }
+  .acm-fallback p { font-size: 14px; line-height: 1.6; color: var(--ink-soft); max-width: 380px; margin: 0 auto 24px; }
+
+  /* ─── Contact ────────────────────────────────────────────── */
+  .ct-section { padding: 80px 32px 60px; }
+  .ct-card {
+    max-width: 1100px; margin: 0 auto; background: var(--red); color: var(--cream);
+    border: 3px solid var(--ink); border-radius: 28px; box-shadow: 12px 12px 0 var(--ink);
+    padding: 64px 56px; position: relative; overflow: hidden;
+  }
+  .ct-card::after { content: '🥣'; position: absolute; right: -10px; bottom: -20px; font-size: 200px; opacity: 0.14; pointer-events: none; }
+  .ct-kick { font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.9; margin-bottom: 14px; }
+  .ct-head { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(44px, 7vw, 90px); line-height: 0.9; letter-spacing: -0.03em; margin-bottom: 20px; }
+  .ct-sub { font-size: 19px; line-height: 1.5; max-width: 540px; margin-bottom: 36px; opacity: 0.95; }
+  .ct-email {
+    display: inline-flex; align-items: center; gap: 14px; background: var(--cream); color: var(--ink);
+    font-family: 'DM Mono', monospace; font-size: clamp(14px, 2vw, 19px); padding: 18px 26px;
+    border-radius: 100px; border: 3px solid var(--ink); box-shadow: 5px 5px 0 var(--ink);
+    transition: transform 0.2s, box-shadow 0.2s; margin-bottom: 36px;
+    cursor: pointer;
+  }
+  .ct-email:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 var(--ink); }
+  .ct-badge { background: var(--mint); color: var(--cream); font-size: 11px; padding: 3px 10px; border-radius: 100px; }
+  .ct-links { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 2; }
+  .ct-link {
+    background: rgba(0,0,0,0.16); border: 2px solid var(--cream); border-radius: 100px;
+    padding: 12px 22px; font-family: 'DM Mono', monospace; font-size: 13px;
+    transition: background 0.2s, transform 0.2s; color: var(--cream); display: inline-flex; align-items: center; gap: 6px;
+  }
+  .ct-link:hover { background: var(--ink); transform: translateY(-3px); }
+  .ct-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 28px; font-family: 'DM Mono', monospace; font-size: 12px; opacity: 0.9; }
+  .ct-foot {
+    max-width: 1100px; margin: 28px auto 0; display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 10px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-soft);
+  }
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .sk-grid { grid-template-columns: 1fr; }
+    .sk-label { transform: none; }
+  }
+  @media (max-width: 900px) {
+    .hero-badges { display: none; }
+    .hero-caption { left: 24px; right: 24px; max-width: none; }
+    .box3d { --bw: 240px; --bh: 340px; --bd: 100px; }
+    .box3d .bf-brand { font-size: 32px; }
+    .ac-grid { grid-template-columns: 1fr 1fr; }
+    .acm-body { grid-template-columns: 1fr; }
+    .acm-left { border-right: none; border-bottom: 2px solid var(--ink); min-height: 320px; }
+  }
+  @media (max-width: 760px) {
+    .pj-cards { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .sec { padding: 80px 20px 100px; }
+    .ct-card { padding: 44px 28px; }
+    .ac-award { flex-direction: column; text-align: center; gap: 16px; }
+    .ac-award .ac-award-yr { position: static; }
+    .ac-award .ac-hint { position: static; justify-content: center; margin-top: 8px; }
+  }
+  @media (max-width: 560px) {
+    .ac-grid { grid-template-columns: 1fr; }
+    .box3d { --bw: 200px; --bh: 290px; --bd: 86px; }
+    .box3d .bf-brand { font-size: 26px; }
+    .box3d .bf-bowl { width: 140px; height: 90px; }
+    .pjm-panel { height: 95vh; }
+    .pjm-preview { padding: 24px; }
+  }
+
+  /* ─── Focus / Accessibility ──────────────────────────────── */
+  :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .hero-wrap { height: 100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Loading Screen ─────────────────────────────────────── -->
+<div id="loader" role="status" aria-label="Loading portfolio">
+  <div id="loader-logo">Dipta's <span>Dev Crunch</span></div>
+  <div id="loader-bar-wrap"><div id="loader-bar"></div></div>
+  <div id="loader-txt">warming up the stack…</div>
+</div>
+
+<div id="root"></div>
+
+<script>
+// Loader animation
+(function() {
+  const bar = document.getElementById('loader-bar');
+  const loader = document.getElementById('loader');
+  const txt = document.getElementById('loader-txt');
+  const msgs = ['warming up the stack…', 'installing dependencies…', 'compiling React…', 'pushing to prod…', 'done! 🚀'];
+  let prog = 0, msgI = 0, interval;
+  interval = setInterval(() => {
+    prog = Math.min(prog + Math.random() * 18 + 6, 95);
+    bar.style.width = prog + '%';
+    const idx = Math.floor((prog / 100) * msgs.length);
+    if (idx !== msgI && idx < msgs.length) { msgI = idx; txt.textContent = msgs[idx]; }
+    if (prog >= 95) { clearInterval(interval); }
+  }, 80);
+
+  window.addEventListener('load', () => {
+    bar.style.width = '100%';
+    txt.textContent = msgs[msgs.length - 1];
+    clearInterval(interval);
+    setTimeout(() => { loader.classList.add('out'); }, 400);
+  });
+})();
+</script>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback } = React;
+
+// ─── Three.js Particle Background ───────────────────────────
+function initParticles(canvas) {
+  if (!window.THREE || !canvas) return () => {};
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(70, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+  camera.position.z = 6;
+
+  const COUNT = 100;
+  const geometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(COUNT * 3);
+  const velocities = [];
+  for (let i = 0; i < COUNT; i++) {
+    positions[i * 3]     = (Math.random() - 0.5) * 16;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 4;
+    velocities.push(
+      (Math.random() - 0.5) * 0.003,
+      (Math.random() - 0.5) * 0.002,
+      0
+    );
+  }
+  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+  const material = new THREE.PointsMaterial({ color: 0xFF5A3C, size: 0.08, transparent: true, opacity: 0.55, sizeAttenuation: true });
+  const points = new THREE.Points(geometry, material);
+  scene.add(points);
+
+  let mouse = { x: 0, y: 0 };
+  const onMouseMove = (e) => {
+    mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouse.y = -(e.clientY / window.innerHeight - 0.5) * 2;
+  };
+  window.addEventListener('mousemove', onMouseMove, { passive: true });
+
+  const onResize = () => {
+    if (!canvas.parentElement) return;
+    const w = canvas.parentElement.offsetWidth;
+    const h = canvas.parentElement.offsetHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  };
+  window.addEventListener('resize', onResize, { passive: true });
+  onResize();
+
+  let animId;
+  const pos = geometry.attributes.position;
+  const animate = () => {
+    animId = requestAnimationFrame(animate);
+    for (let i = 0; i < COUNT; i++) {
+      pos.array[i * 3]     += velocities[i * 3];
+      pos.array[i * 3 + 1] += velocities[i * 3 + 1];
+      if (pos.array[i * 3] > 8)  pos.array[i * 3] = -8;
+      if (pos.array[i * 3] < -8) pos.array[i * 3] = 8;
+      if (pos.array[i * 3 + 1] > 5)  pos.array[i * 3 + 1] = -5;
+      if (pos.array[i * 3 + 1] < -5) pos.array[i * 3 + 1] = 5;
+    }
+    pos.needsUpdate = true;
+    points.rotation.x += (mouse.y * 0.08 - points.rotation.x) * 0.04;
+    points.rotation.y += (mouse.x * 0.08 - points.rotation.y) * 0.04;
+    renderer.render(scene, camera);
+  };
+  animate();
+
+  return () => {
+    cancelAnimationFrame(animId);
+    window.removeEventListener('mousemove', onMouseMove);
+    window.removeEventListener('resize', onResize);
+    geometry.dispose();
+    material.dispose();
+    renderer.dispose();
+  };
+}
+
+// ─── Nav ─────────────────────────────────────────────────────
+function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
+  const close = () => setMobileOpen(false);
+
+  return (
+    <>
+      <nav className={`nav${scrolled ? ' scrolled' : ''}`} role="navigation" aria-label="Primary navigation">
+        <a href="#" className="nav-logo" aria-label="Dipta Biswas - home">
+          <span className="nav-logo-chip" aria-hidden="true">D</span>
+          Dipta Biswas
+        </a>
+        <div className="nav-links" role="menubar">
+          <a href="#skills" role="menuitem">Skills</a>
+          <a href="#projects" role="menuitem">Projects</a>
+          <a href="#story" role="menuitem">Story</a>
+          <a href="#achievements" role="menuitem">Awards</a>
+          <a href="#contact" className="nav-pill" role="menuitem">Get in touch</a>
+        </div>
+        <button
+          className="nav-hamburger" aria-label="Open navigation menu"
+          aria-expanded={mobileOpen} onClick={() => setMobileOpen(true)}
+        >
+          <span/><span/><span/>
+        </button>
+      </nav>
+
+      {mobileOpen && (
+        <div className="nav-mobile open" role="dialog" aria-modal="true" aria-label="Navigation menu">
+          <button className="nav-mobile-close" onClick={close} aria-label="Close menu">✕</button>
+          <a href="#skills" onClick={close}>Skills</a>
+          <a href="#projects" onClick={close}>Projects</a>
+          <a href="#story" onClick={close}>Story</a>
+          <a href="#achievements" onClick={close}>Awards</a>
+          <a href="#contact" onClick={close}>Get in touch</a>
+        </div>
+      )}
+    </>
+  );
+}
+
+// ─── 3D Box ───────────────────────────────────────────────────
+function Box3D({ progress, dragRef }) {
+  const boxRef = useRef(null);
+  const stateRef = useRef({ rotY: -22, rotX: -8, dragY: 0 });
+
+  useEffect(() => {
+    let raf;
+    const el = boxRef.current;
+    const loop = () => {
+      const s = stateRef.current;
+      const tY = -22 + (progress.current * 340) + s.dragY;
+      const tX = -8 + Math.sin(progress.current * Math.PI * 2) * 6;
+      s.rotY += (tY - s.rotY) * 0.08;
+      s.rotX += (tX - s.rotX) * 0.08;
+      if (el) el.style.transform = `translate(-50%,-50%) rotateX(${s.rotX}deg) rotateY(${s.rotY}deg)`;
+      raf = requestAnimationFrame(loop);
+    };
+    loop();
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  useEffect(() => {
+    if (dragRef) dragRef.current = (dy) => { stateRef.current.dragY = dy; };
+  }, []);
+
+  return (
+    <div className="scene" aria-hidden="true">
+      <div className="box3d" ref={boxRef}>
+        {/* FRONT */}
+        <div className="face front">
+          <div className="bf">
+            <div className="bf-top">
+              <span>★ EST. 2020</span>
+              <span className="bf-badge">NEW 60FPS!</span>
+            </div>
+            <div className="bf-brand">DIPTA'S<span className="pop">DEV CRUNCH™</span></div>
+            <div className="bf-sub">FULL-STACK FLAKES · REACT-FROSTED</div>
+            <div className="bf-bowl">
+              <div className="milk"></div>
+              <div className="bowl"></div>
+              <div className="o" style={{left:28,bottom:28}}></div>
+              <div className="o" style={{left:66,bottom:42,borderColor:'var(--mint)'}}></div>
+              <div className="o" style={{left:104,bottom:30,borderColor:'var(--blue)'}}></div>
+              <div className="o" style={{left:142,bottom:40,borderColor:'var(--purple)'}}></div>
+              <div className="bf-flag">+ TypeScript</div>
+            </div>
+            <div className="bf-net">NET WT. 5+ YEARS (1 SR. ENGINEER)</div>
+          </div>
+        </div>
+        {/* BACK */}
+        <div className="face back">
+          <div className="bback">
+            <h4>What's inside?</h4>
+            <p>A Senior Frontend Engineer who turns impossible UI problems into 60fps reality. Best served remote, with strong engineering culture.</p>
+            <div className="fact">⚡ 60K-row tables @ 60fps</div>
+            <div className="fact">🔁 Async state that stays in sync</div>
+            <div className="fact">🧱 UI systems that hold at scale</div>
+            <div className="fact">🏆 Outstanding Performance '23</div>
+          </div>
+        </div>
+        {/* RIGHT */}
+        <div className="face right">
+          <div className="bside">
+            <h5>FACTS</h5>
+            <div className="row"><span>YRS</span><span>5+</span></div>
+            <div className="row"><span>FPS</span><span>60</span></div>
+            <div className="row"><span>ROWS</span><span>60K</span></div>
+            <div className="row"><span>LVL</span><span>SDE3</span></div>
+            <div className="row"><span>BUGS</span><span>0*</span></div>
+          </div>
+        </div>
+        {/* LEFT */}
+        <div className="face left">
+          <div className="bside">
+            <h5>STACK</h5>
+            <div className="row"><span>React</span><span>96</span></div>
+            <div className="row"><span>TS</span><span>92</span></div>
+            <div className="row"><span>Node</span><span>85</span></div>
+            <div className="row"><span>AWS</span><span>80</span></div>
+            <div className="row"><span>Mongo</span><span>82</span></div>
+          </div>
+        </div>
+        {/* TOP */}
+        <div className="face top"><div className="btb">★ DIPTA-O's ★</div></div>
+        {/* BOTTOM */}
+        <div className="face bottom"><div className="btb">MADE WITH ♥ IN PUNE</div></div>
+      </div>
+      <div className="box-floor"></div>
+    </div>
+  );
+}
+
+// ─── Hero ─────────────────────────────────────────────────────
+function Hero() {
+  const wrapRef = useRef(null);
+  const canvasRef = useRef(null);
+  const progress = useRef(0);
+  const dragSetter = useRef(null);
+  const [stage, setStage] = useState(0);
+  const drag = useRef({ active: false, startX: 0, val: 0 });
+  const fillRef = useRef(null);
+
+  useEffect(() => {
+    const cleanup = initParticles(canvasRef.current);
+    return cleanup;
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = wrapRef.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const total = r.height - window.innerHeight;
+      const p = Math.min(1, Math.max(0, -r.top / total));
+      progress.current = p;
+      setStage(p < 0.34 ? 0 : p < 0.68 ? 1 : 2);
+      if (fillRef.current) fillRef.current.style.transform = `scaleY(${p})`;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onDown = (e) => { drag.current.active = true; drag.current.startX = e.clientX; };
+    const onMove = (e) => {
+      if (!drag.current.active) return;
+      drag.current.val += (e.clientX - drag.current.startX) * 0.4;
+      drag.current.startX = e.clientX;
+      dragSetter.current && dragSetter.current(drag.current.val);
+    };
+    const onUp = () => { drag.current.active = false; };
+    window.addEventListener('mousedown', onDown);
+    window.addEventListener('mousemove', onMove, { passive: true });
+    window.addEventListener('mouseup', onUp);
+    return () => {
+      window.removeEventListener('mousedown', onDown);
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+    };
+  }, []);
+
+  const captions = [
+    { kicker: 'Meet', big: 'Dipta Biswas.', sub: 'Senior Frontend Engineer — building web apps that are actually fast.', tag: 'SCROLL TO ROTATE →' },
+    { kicker: 'Fully', big: 'loaded.', sub: 'React · TypeScript · TanStack · 5+ years of crunch.', tag: 'KEEP SCROLLING' },
+    { kicker: 'Ships at', big: '60 fps.', sub: '60K-row tables, async in sync, zero jank.', tag: 'DIG IN ↓' },
+  ];
+
+  return (
+    <section aria-label="Introduction" className="hero-wrap" ref={wrapRef}>
+      <div className="hero-pin">
+        <canvas id="three-canvas" ref={canvasRef} aria-hidden="true"></canvas>
+        <div className="hero-bg-blob" aria-hidden="true"></div>
+
+        <div className="hero-caption">
+          {captions.map((c, i) => (
+            <div
+              key={i}
+              className="hero-stage"
+              aria-hidden={stage !== i}
+              style={{
+                position: i === 0 ? 'relative' : 'absolute',
+                top: i === 0 ? 'auto' : 0,
+                opacity: stage === i ? 1 : 0,
+                transform: stage === i ? 'translateY(0)' : 'translateY(16px)',
+                pointerEvents: stage === i ? 'auto' : 'none',
+              }}
+            >
+              <p className="hero-kicker">{c.kicker}</p>
+              <h1 className="hero-big">{c.big}</h1>
+              <p className="hero-sub">{c.sub}</p>
+              <span className="hero-tag">{c.tag}</span>
+            </div>
+          ))}
+        </div>
+
+        <Box3D progress={progress} dragRef={dragSetter} />
+
+        <div className="hero-badges" aria-hidden="true">
+          <div className="hero-badge accent" style={{transform:'rotate(3deg)'}}>
+            <b>5+ yrs</b><span>shipping UIs</span>
+          </div>
+          <div className="hero-badge" style={{transform:'rotate(-2deg)'}}>
+            <b>60fps</b><span>60K-row tables</span>
+          </div>
+          <div className="hero-badge" style={{transform:'rotate(2deg)'}}>
+            <b>SDE3</b><span>@ Gyaan AI</span>
+          </div>
+        </div>
+
+        <div className="scroll-rail" aria-hidden="true">
+          <span>SCROLL</span>
+          <div className="scroll-rail-bar">
+            <div className="scroll-rail-fill" ref={fillRef}></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Skills ───────────────────────────────────────────────────
+function Skills() {
+  const ref = useRef(null);
+  const [vis, setVis] = useState(true);
+
+  useEffect(() => {
+    const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVis(true); }, { threshold: 0.15 });
+    if (ref.current) o.observe(ref.current);
+    return () => o.disconnect();
+  }, []);
+
+  const facts = [
+    { l: 'JavaScript',                          v: '98%' },
+    { l: 'React',                               v: '96%', big: true },
+    { l: 'TanStack (Table / Query / Virtual)',   v: '95%' },
+    { l: 'TypeScript',                           v: '92%', big: true },
+    { l: 'Next.js',                              v: '90%' },
+    { l: 'Redux / Redux Saga',                   v: '85%' },
+    { l: 'Node.js · NestJS',                     v: '82%' },
+    { l: 'MongoDB · REST · Socket.io',           v: '80%' },
+    { l: 'AWS · Docker · CI/CD',                 v: '78%' },
+  ];
+
+  const ingredients = [
+    'React','Next.js','TypeScript','JavaScript','TanStack Table','TanStack Query',
+    'TanStack Virtual','Redux','Redux Saga','SCSS','Node.js','NestJS','MongoDB',
+    'Socket.io','AWS Lambda','S3','EC2','Docker','GitHub Actions','Figma','Jest / RTL'
+  ];
+
+  return (
+    <section id="skills" className="sec" ref={ref} aria-labelledby="skills-heading">
+      <div className="sec-tag" aria-hidden="true">Skills</div>
+      <h2 className="sec-head" id="skills-heading">
+        Yes, I Googled some of this. <em>No</em>, I won't apologize.
+      </h2>
+
+      <div className="sk-grid">
+        <div className="sk-label" role="img" aria-label="Skill proficiency chart">
+          <h3>Skill Facts</h3>
+          <div className="sk-serv"><span>Serving size</span><span>1 Senior Engineer</span></div>
+          <div className="sk-serv bold"><span>Amount per sprint</span><span></span></div>
+          <div className="sk-thick"></div>
+          <div className="sk-serv bold"><span>Daily Ship-It Value</span><span>100%</span></div>
+          <div className="sk-thick"></div>
+          {facts.map((f, i) => (
+            <div key={f.l} className={`sk-row${f.big ? ' big' : ''}`}>
+              <span className="l">{f.l}</span>
+              <span className="bar" role="progressbar" aria-valuenow={parseInt(f.v)} aria-valuemin="0" aria-valuemax="100" aria-label={`${f.l} proficiency ${f.v}`}>
+                <i style={{ transform: vis ? `scaleX(${parseInt(f.v) / 100})` : 'scaleX(0)', transitionDelay: `${i * 70}ms` }}></i>
+              </span>
+              <span className="v">{f.v}</span>
+            </div>
+          ))}
+          <p className="sk-foot">* Values based on a 60fps daily budget. Contains 100% real commits. May contain traces of CSS wizardry. Not a significant source of bugs.</p>
+        </div>
+
+        <div className="sk-side">
+          <h4>What I'm made of</h4>
+          <p className="sk-lead">
+            Five years deep in the <b>MERN + TanStack</b> stack, with a frontend specialty in making heavy,
+            data-dense interfaces feel weightless. I care about <b>accessibility</b>, <b>performance budgets</b>,
+            and code reviews that actually teach something.
+          </p>
+          <h4>Ingredients</h4>
+          <div className="sk-chips" role="list" aria-label="Technology stack">
+            {ingredients.map((ing, i) => (
+              <span key={ing} role="listitem" className={`sk-chip${vis ? ' show' : ''}`} style={{ transitionDelay: `${i * 40}ms` }}>
+                {ing}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Projects ─────────────────────────────────────────────────
+const PROJECTS = [
+  {
+    name: 'MBOX',
+    flavor: 'Cloud File Storage',
+    year: '2024',
+    emoji: '☁️',
+    color: '#3B7DFF',
+    live: 'https://drive-clone-ecru.vercel.app',
+    repo: 'https://github.com/itsdiptabiswas/drive-clone',
+    desc: 'A full cloud-storage app covering the whole file lifecycle: chunked uploads, AES encryption, Razorpay payments, sharing, recycle bin, and PWA support. Auth, multi-device sync and all storage logic — handled end-to-end.',
+    stack: ['Next.js', 'TypeScript', 'MongoDB', 'AWS S3', 'Razorpay', 'NextAuth', 'PWA'],
+  },
+  {
+    name: 'Rello',
+    flavor: 'Real-time Kanban',
+    year: '2023',
+    emoji: '🗂️',
+    color: '#2FB783',
+    live: '',
+    repo: 'https://github.com/itsdiptabiswas/trello-clone',
+    desc: 'A real-time project-management board with live updates over Socket.io and gnarly async side-effects tamed by Redux Saga. GitHub Actions wired for CI/CD — every push tests and deploys itself.',
+    stack: ['React', 'TypeScript', 'Redux Saga', 'Socket.io', 'MongoDB', 'GitHub Actions'],
+  },
+];
+
+function ProjectModal({ project, onClose }) {
+  const [closing, setClosing] = useState(false);
+  const [iframeBlocked, setIframeBlocked] = useState(false);
+
+  const close = useCallback(() => {
+    setClosing(true);
+    setTimeout(onClose, 340);
+  }, [onClose]);
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') close(); };
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [close]);
+
+  const urlDisplay = project.live
+    ? project.live.replace(/^https?:\/\//, '')
+    : `dipta.dev/${project.name.toLowerCase()} — interactive preview`;
+
+  return (
+    <div className={`pjm${closing ? ' closing' : ''}`} role="dialog" aria-modal="true" aria-label={`${project.name} project details`}>
+      <div className="pjm-bg" onClick={close} aria-hidden="true"></div>
+      <div className="pjm-panel" style={{ '--cc': project.color }}>
+        <div className="pjm-bar" aria-label="Browser chrome">
+          <div className="pjm-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div className="pjm-url" title={project.live || undefined}>{urlDisplay}</div>
+          <button className="pjm-close" onClick={close} aria-label="Close project modal">✕</button>
+        </div>
+        <div className="pjm-body">
+          {project.live ? (
+            <iframe
+              className="pjm-frame"
+              src={project.live}
+              title={`${project.name} live demo`}
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads"
+              referrerPolicy="no-referrer"
+              onError={() => setIframeBlocked(true)}
+            ></iframe>
+          ) : (
+            <div className="pjm-preview">
+              <div className="pjm-ph">{project.name}</div>
+              <div className="pjm-pf">{project.flavor} · {project.year}</div>
+              <p className="pjm-pd">{project.desc}</p>
+              <div className="pjm-ps">{project.stack.map(s => <span key={s}>{s}</span>)}</div>
+              <div className="pjm-demo">
+                <div className="big">🎮 Live demo loads right here</div>
+                <p>The deployed URL will go here — once set, the real interactive app opens in this window without leaving the portfolio.</p>
+                <div className="pjm-ctas">
+                  <a className="pjm-cta primary" href={project.repo} target="_blank" rel="noopener noreferrer">View code on GitHub ↗</a>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Projects() {
+  const [open, setOpen] = useState(null);
+  const ref = useRef(null);
+  const [vis, setVis] = useState(true);
+
+  useEffect(() => {
+    const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVis(true); }, { threshold: 0.1 });
+    if (ref.current) o.observe(ref.current);
+    return () => o.disconnect();
+  }, []);
+
+  return (
+    <section id="projects" className="sec" ref={ref} aria-labelledby="projects-heading">
+      <div className="sec-tag" aria-hidden="true">Side quests</div>
+      <h2 className="sec-head" id="projects-heading">
+        Stuff I <em>shipped</em> when<br/>I should've been sleeping.
+      </h2>
+
+      <div className="pj-cards" role="list">
+        {PROJECTS.map((p, i) => (
+          <button
+            key={p.name} role="listitem"
+            className={`pj-card${vis ? ' show' : ''}`}
+            style={{ '--cc': p.color, transitionDelay: `${i * 0.12}s` }}
+            onClick={() => setOpen(i)}
+            aria-label={`Open ${p.name} — ${p.flavor}`}
+          >
+            <div className="pj-card-top" aria-hidden="true">
+              <span className="pj-vbadge">VARIETY №{i + 1} · {p.year}</span>
+              <span className="pj-vemo">{p.emoji}</span>
+              <div className="pj-vname">{p.name}</div>
+              <div className="pj-vflavor">{p.flavor}</div>
+            </div>
+            <div className="pj-card-body">
+              <p className="pj-card-desc">{p.desc}</p>
+              <div className="pj-card-stack" aria-label="Technologies used">
+                {p.stack.slice(0, 5).map(s => <span key={s}>{s}</span>)}
+              </div>
+              <div className="pj-card-cta">
+                <span>{p.live ? 'Open & interact ↗' : 'View details'}</span>
+                <span className="pj-arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+
+      {open !== null && (
+        <ProjectModal project={PROJECTS[open]} onClose={() => setOpen(null)} />
+      )}
+    </section>
+  );
+}
+
+// ─── Story ────────────────────────────────────────────────────
+const JOBS = [
+  {
+    co: 'Gyaan AI (MaxIq)', role: 'Senior Frontend Engineer — SDE3',
+    when: 'Feb 2025 — Present', where: 'Pune', color: 'var(--red)',
+    pts: [
+      'Rebuilt the CRM data-table virtualization with TanStack Table + Virtual — 60K+ rows now scroll at a steady 60fps.',
+      'Own the core workspace UI: deal rooms, collaboration views, and forecasting interfaces revenue teams live in.',
+      'Synced Redux and localStorage by using a TanStack Query Observer to subscribe to cache updates via query name bindings.',
+    ],
+  },
+  {
+    co: 'Deloitte', role: 'Consultant — Frontend',
+    when: 'Sep 2024 — Feb 2025', where: 'Kolkata', color: 'var(--blue)',
+    pts: [
+      'Turned Figma into pixel-perfect, accessible, responsive interfaces for enterprise-scale apps.',
+      'Optimized search workflows with Coveo Headless + Atomic in Next.js — cut manual ops work ~90%.',
+    ],
+  },
+  {
+    co: 'CodeClouds IT Solutions', role: 'Full-Stack Developer',
+    when: 'Feb 2022 — Sep 2024', where: 'Kolkata', color: 'var(--mint)',
+    pts: [
+      'Built an Ant Design Pro scaffold that cut new-project setup time by 45%.',
+      'Used Webpack to bundle and compress the app into a ZIP for AWS Lambda deployment, making future iterations far easier to ship.',
+      'Designed serverless infra on AWS Lambda / S3 / API Gateway with CodeBuild CI/CD.',
+      'Mentored juniors in React & JS — won the Outstanding Performance Award (Nov 2023).',
+    ],
+  },
+  {
+    co: 'Fastor7', role: 'Software Developer',
+    when: 'Sep 2021 — Feb 2022', where: 'Delhi', color: 'var(--purple)',
+    pts: [
+      'Revived a sluggish real-estate app with React + OpenLayers + smart caching — 60% faster.',
+      'Built the UI animations and micro-interactions that made it feel polished.',
+    ],
+  },
+  {
+    co: 'Acropolis Infotech', role: 'Full-Stack Developer',
+    when: 'Aug 2020 — Sep 2021', where: 'Delhi', color: 'var(--yellow)',
+    pts: [
+      'Shipped pixel-perfect, cross-browser UIs in React across multiple client projects.',
+      'Managed backend deployments on Nginx / EC2 with Gzip and load balancing.',
+    ],
+  },
+];
+
+function Story() {
+  const ref = useRef(null);
+  const [vis, setVis] = useState(false);
+
+  useEffect(() => {
+    const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVis(true); }, { threshold: 0.05 });
+    if (ref.current) o.observe(ref.current);
+    return () => o.disconnect();
+  }, []);
+
+  return (
+    <section id="story" className="sec" ref={ref} aria-labelledby="story-heading">
+      <div className="sec-tag" aria-hidden="true">The journey so far</div>
+      <h2 className="sec-head" id="story-heading">
+        From first commit to senior —<br/>five years of <em>leveling up</em>.
+      </h2>
+      <div className="st-list" role="list">
+        {JOBS.map((j, i) => (
+          <article
+            key={i} role="listitem"
+            className={`st-card${vis ? ' show' : ''}`}
+            style={{ '--c': j.color, transitionDelay: `${i * 90}ms` }}
+          >
+            <div className="st-top">
+              <h3 className="st-co">{j.co}</h3>
+              <div className="st-when">
+                <time>{j.when}</time>
+                {' · '}
+                <span className="st-where">{j.where}</span>
+              </div>
+            </div>
+            <div className="st-role">{j.role}</div>
+            <ul className="st-pts" aria-label="Responsibilities and achievements">
+              {j.pts.map((p, k) => <li key={k} className="st-pt">{p}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ─── Achievements ─────────────────────────────────────────────
+const LINKEDIN_POST = '';
+const LINKEDIN_PROFILE = 'https://linkedin.com/in/dipta-biswas';
+
+function Achievements() {
+  const ref = useRef(null);
+  const [vis, setVis] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
+
+  const close = useCallback(() => {
+    setClosing(true);
+    setTimeout(() => { setOpen(false); setClosing(false); }, 340);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape' && open) close(); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open, close]);
+
+  useEffect(() => {
+    const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVis(true); }, { threshold: 0.15 });
+    if (ref.current) o.observe(ref.current);
+    return () => o.disconnect();
+  }, []);
+
+  const metrics = [
+    { b: '60fps',  s: '60K-row virtual tables, zero jank',      emo: '⚡', cls: 'r' },
+    { b: '0',      s: 'duplicate mutations after the fix',       emo: '🔁', cls: 'g' },
+    { b: '~90%',   s: 'less manual ops work (Coveo search)',     emo: '📉', cls: 'b' },
+    { b: '45%',    s: 'faster project setup (scaffold)',         emo: '🚀', cls: 'p' },
+    { b: '60%',    s: 'faster real-estate app (caching)',        emo: '🏎️', cls: 'g' },
+    { b: '5+ yrs', s: 'shipping production frontends',           emo: '📦', cls: 'r' },
+  ];
+
+  return (
+    <section id="achievements" className="sec" ref={ref} aria-labelledby="achievements-heading">
+      <div className="sec-tag" aria-hidden="true">Achievements</div>
+      <h2 className="sec-head" id="achievements-heading">
+        Some <em>medals</em> on the shelf.
+      </h2>
+
+      <button
+        className="ac-award"
+        onClick={() => { setClosing(false); setOpen(true); }}
+        aria-label="View Outstanding Performance Award celebration — opens LinkedIn post"
+      >
+        <span className="ac-award-medal" aria-hidden="true">🏆</span>
+        <div>
+          <h3>Outstanding Performance Award</h3>
+          <p>Recognized at CodeClouds for consistent delivery quality and measurable impact on team efficiency — including compressing the application into a ZIP for AWS Lambda deployment, making future development far easier.</p>
+        </div>
+        <span className="ac-award-yr">NOV 2023</span>
+        <span className="ac-hint">
+          <span className="ac-hint-in" aria-hidden="true">in</span>
+          see the celebration post →
+        </span>
+      </button>
+
+      <div className="ac-grid" role="list" aria-label="Impact metrics">
+        {metrics.map((m, i) => (
+          <div
+            key={i} role="listitem"
+            className={`ac-metric ${m.cls}${vis ? ' show' : ''}`}
+            style={{ '--emo': `"${m.emo}"`, transitionDelay: `${i * 70}ms` }}
+          >
+            <b aria-label={m.b}>{m.b}</b>
+            <span>{m.s}</span>
+          </div>
+        ))}
+      </div>
+
+      {open && (
+        <div className={`acm${closing ? ' closing' : ''}`} role="dialog" aria-modal="true" aria-label="Outstanding Performance Award details">
+          <div className="acm-bg" onClick={close} aria-hidden="true"></div>
+          <div className="acm-panel">
+            <div className="acm-bar">
+              <span className="in" aria-hidden="true">in</span>
+              <b>Celebrating the Outstanding Performance Award</b>
+              <button className="acm-close" onClick={close} aria-label="Close achievement modal">✕</button>
+            </div>
+            <div className="acm-body">
+              <div className="acm-left">
+                {LINKEDIN_POST ? (
+                  <iframe className="pjm-frame" src={LINKEDIN_POST} title="LinkedIn celebration post" frameBorder="0" allowFullScreen></iframe>
+                ) : (
+                  <div className="acm-fallback">
+                    <span className="medal" aria-hidden="true">🎉</span>
+                    <h3>Celebration post</h3>
+                    <p>Paste your LinkedIn celebration post embed URL into <code>LINKEDIN_POST</code> in the source and the real post loads here.</p>
+                    <a className="acm-go" href={LINKEDIN_PROFILE} target="_blank" rel="noopener noreferrer">
+                      <span aria-hidden="true" style={{background:'#fff',color:'#0A66C2',width:18,height:18,borderRadius:4,display:'grid',placeItems:'center',fontWeight:700,fontSize:11}}>in</span>
+                      Open LinkedIn ↗
+                    </a>
+                  </div>
+                )}
+              </div>
+              <div className="acm-right">
+                <span className="eyebrow">🏆 Nov 2023 · CodeClouds</span>
+                <h3>Outstanding Performance Award</h3>
+                <p>A milestone I'm genuinely proud of — recognition for <b>consistent delivery</b> and real, measurable impact on how the team shipped.</p>
+                <div className="acm-pts">
+                  <div className="acm-pt">Built a reusable scaffold that cut new-project setup time by <b>45%</b>.</div>
+                  <div className="acm-pt">Mentored junior devs in React &amp; modern JavaScript.</div>
+                  <div className="acm-pt">Raised the bar on code reviews and delivery quality.</div>
+                </div>
+                <p>Beyond the trophy, it's the kind of teamwork and momentum I love being part of — a reminder of why I do this work.</p>
+                <a className="acm-go" href={LINKEDIN_PROFILE} target="_blank" rel="noopener noreferrer">
+                  <span aria-hidden="true" style={{background:'#fff',color:'#0A66C2',width:18,height:18,borderRadius:4,display:'grid',placeItems:'center',fontWeight:700,fontSize:11}}>in</span>
+                  View on LinkedIn ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+// ─── Contact ──────────────────────────────────────────────────
+function Contact() {
+  const [copied, setCopied] = useState(false);
+  const email = 'jobs.diptabiswas@gmail.com';
+
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(email); } catch { }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1800);
+  };
+
+  return (
+    <section id="contact" className="ct-section" aria-labelledby="contact-heading">
+      <div className="ct-card">
+        <p className="ct-kick">★ Open to remote-first roles · let's talk</p>
+        <h2 className="ct-head" id="contact-heading">Get in<br/>touch.</h2>
+        <p className="ct-sub">
+          Looking for a Senior Frontend Engineer who ships at 60fps and leaves code reviews that teach?
+          I'd love to hear from you.
+        </p>
+        <button
+          className="ct-email"
+          onClick={copy}
+          aria-label={copied ? 'Email address copied!' : 'Copy email address to clipboard'}
+        >
+          <span aria-hidden="true">✉</span>
+          <span>{email}</span>
+          <span className="ct-badge" aria-live="polite">{copied ? 'COPIED ✓' : 'TAP TO COPY'}</span>
+        </button>
+        <nav className="ct-links" aria-label="Social links">
+          <a className="ct-link" href="https://linkedin.com/in/dipta-biswas" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)">
+            <span aria-hidden="true">↗</span> LinkedIn
+          </a>
+          <a className="ct-link" href="https://github.com/itsdiptabiswas" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)">
+            <span aria-hidden="true">↗</span> GitHub
+          </a>
+          <a className="ct-link" href="tel:+918918940615" aria-label="Call +91 89189 40615">
+            <span aria-hidden="true">↗</span> +91 89189 40615
+          </a>
+        </nav>
+        <div className="ct-meta" aria-label="Additional info">
+          <span>📍 Pune, India</span>
+          <span>🕑 IST (GMT+5:30)</span>
+          <span>🎓 B.Tech IT · 2020</span>
+        </div>
+      </div>
+      <div className="ct-foot">
+        <span>© 2026 DIPTA BISWAS</span>
+        <span>BUILT WITH REACT + THREE.JS · PUNE, INDIA</span>
+      </div>
+    </section>
+  );
+}
+
+// ─── App ──────────────────────────────────────────────────────
+function App() {
+  return (
+    <>
+      <a href="#skills" className="skip-link" style={{
+        position:'absolute',left:'-9999px',top:'auto',width:'1px',height:'1px',overflow:'hidden',
+        zIndex:999
+      }}>Skip to main content</a>
+      <Nav />
+      <main>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Story />
+        <Achievements />
+        <Contact />
+      </main>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://itsdiptabiswas.github.io/portfolio/sitemap.xml
