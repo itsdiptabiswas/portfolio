@@ -43,6 +43,14 @@
   font-weight: 700;
   font-size: 26px;
 }
+.st-formerly {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0;
+}
+.st-pt b { font-weight: 700; color: var(--ink); }
 .st-when {
   font-family: var(--font-mono);
   font-size: 12px;
