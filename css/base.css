@@ -28,7 +28,8 @@ body::before {
   opacity: 0.5;
 }
 
-main, header { position: relative; z-index: 1; }
+main { position: relative; z-index: 1; }
+header { position: relative; z-index: 100; }
 
 /* Accessibility */
 .skip-link {
