@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0%" stop-color="#FFC53A" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FFC53A" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#2C2016" opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FBF1DE"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Cereal box mark -->
+  <g transform="translate(78,84)">
+    <rect x="0" y="0" width="150" height="190" rx="14" fill="#FFFCF5" stroke="#2C2016" stroke-width="4"/>
+    <rect x="14" y="16" width="122" height="26" rx="6" fill="#FF5A3C"/>
+    <text x="75" y="34" font-family="Fredoka, 'Trebuchet MS', sans-serif" font-weight="700" font-size="13" fill="#FBF1DE" text-anchor="middle">EST. 2020</text>
+    <text x="75" y="80" font-family="Fredoka, 'Trebuchet MS', sans-serif" font-weight="700" font-size="17" fill="#2C2016" text-anchor="middle">DIPTA'S</text>
+    <text x="75" y="102" font-family="Fredoka, 'Trebuchet MS', sans-serif" font-weight="700" font-size="15" fill="#FF5A3C" text-anchor="middle">DEV CRUNCH</text>
+    <circle cx="45" cy="140" r="12" fill="none" stroke="#FFC53A" stroke-width="4"/>
+    <circle cx="75" cy="152" r="12" fill="none" stroke="#2FB783" stroke-width="4"/>
+    <circle cx="105" cy="140" r="12" fill="none" stroke="#3B7DFF" stroke-width="4"/>
+    <text x="75" y="178" font-family="'DM Mono', monospace" font-size="9" fill="#2C2016" text-anchor="middle" opacity="0.6">NET WT. 5+ YEARS</text>
+  </g>
+
+  <!-- Text content -->
+  <g transform="translate(280,0)">
+    <text x="0" y="230" font-family="Fredoka, 'Trebuchet MS', sans-serif" font-weight="700" font-size="72" fill="#2C2016">Dipta Biswas</text>
+    <text x="0" y="284" font-family="'DM Sans', sans-serif" font-weight="500" font-size="28" fill="#2C2016" opacity="0.75">Senior Frontend Engineer (SDE3) · Pune, India</text>
+
+    <!-- Stack chips -->
+    <g font-family="'DM Mono', monospace" font-size="17" font-weight="500">
+      <rect x="0" y="330" width="98" height="42" rx="21" fill="#FFFCF5" stroke="#2C2016" stroke-width="2.5"/>
+      <text x="49" y="357" fill="#2C2016" text-anchor="middle">React</text>
+
+      <rect x="112" y="330" width="140" height="42" rx="21" fill="#FFFCF5" stroke="#2C2016" stroke-width="2.5"/>
+      <text x="182" y="357" fill="#2C2016" text-anchor="middle">TypeScript</text>
+
+      <rect x="266" y="330" width="150" height="42" rx="21" fill="#FFFCF5" stroke="#2C2016" stroke-width="2.5"/>
+      <text x="341" y="357" fill="#2C2016" text-anchor="middle">TanStack</text>
+
+      <rect x="430" y="330" width="126" height="42" rx="21" fill="#FFFCF5" stroke="#2C2016" stroke-width="2.5"/>
+      <text x="493" y="357" fill="#2C2016" text-anchor="middle">Next.js</text>
+    </g>
+
+    <text x="0" y="440" font-family="'DM Sans', sans-serif" font-size="22" fill="#2C2016" opacity="0.65" width="700">1 lakh+ row grids at ~55fps · state synced across tabs</text>
+  </g>
+
+  <!-- Footer accent bar -->
+  <rect x="0" y="610" width="1200" height="20" fill="#FF5A3C"/>
+</svg>

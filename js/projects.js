@@ -21,11 +21,11 @@ const FLAVORS = [
   },
   {
     name: 'Rello', flavor: 'Real-time Kanban', year: '2023', emo: '🗂️', color: 'var(--mint)',
-    live: '',
+    live: 'https://rello.diptabiswas.in/',
     embed: false,
-    repo: 'https://github.com/itsdiptabiswas',
-    desc: 'A real-time project-management board with live updates over Socket.io and gnarly async side-effects tamed by Redux Saga. GitHub Actions wired for CI/CD — every push tests and deploys itself.',
-    stack: ['React', 'TypeScript', 'Redux Saga', 'Socket.io', 'MongoDB', 'GitHub Actions'],
+    repo: 'https://github.com/itsdiptabiswas/trello-clone',
+    desc: 'A full kanban-style project board with live collaboration — board updates sync instantly to every connected user over Socket.io, no refresh needed. The gnarly async side-effects are tamed with Redux Saga, and GitHub Actions handles CI/CD so every push tests and deploys itself.',
+    stack: ['React', 'TypeScript', 'Redux Toolkit', 'Redux Saga', 'Socket.io', 'Firebase', 'GitHub Actions'],
   },
 ];
 

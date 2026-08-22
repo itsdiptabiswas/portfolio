@@ -78,7 +78,13 @@
   font-size: 14.5px;
   line-height: 1.5;
   color: var(--ink);
-  display: flex;
-  gap: 10px;
+  position: relative;
+  padding-left: 20px;
 }
-.st-pt::before { content: '▸'; color: var(--c); flex-shrink: 0; }
+.st-pt::before {
+  content: '▸';
+  color: var(--c);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
