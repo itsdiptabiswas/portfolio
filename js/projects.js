@@ -3,10 +3,18 @@
  * Cards with a `live` URL embed the real app in an iframe; others show a preview.
  */
 
+/*
+ * `embed`: set true ONLY if the live site allows being shown in an iframe
+ * (i.e. it does NOT send `X-Frame-Options: DENY/SAMEORIGIN` or a restrictive
+ * CSP `frame-ancestors`). mbox.diptabiswas.in currently blocks framing, so it
+ * opens in a new tab instead. Flip embed:true once the server allows framing
+ * from the portfolio origin — the modal will then embed it automatically.
+ */
 const FLAVORS = [
   {
     name: 'MBOX', flavor: 'Cloud File Storage', year: '2024', emo: '☁️', color: 'var(--blue)',
-    live: 'https://drive-clone-ecru.vercel.app',
+    live: 'https://mbox.diptabiswas.in/',
+    embed: false,
     repo: 'https://github.com/itsdiptabiswas',
     desc: 'A full cloud-storage app covering the whole file lifecycle: chunked uploads, AES encryption, Razorpay payments, sharing, recycle bin, and PWA support. Auth, multi-device sync and storage logic — all handled end-to-end.',
     stack: ['Next.js', 'TypeScript', 'MongoDB', 'AWS S3', 'Razorpay', 'NextAuth', 'PWA'],
@@ -14,6 +22,7 @@ const FLAVORS = [
   {
     name: 'Rello', flavor: 'Real-time Kanban', year: '2023', emo: '🗂️', color: 'var(--mint)',
     live: '',
+    embed: false,
     repo: 'https://github.com/itsdiptabiswas',
     desc: 'A real-time project-management board with live updates over Socket.io and gnarly async side-effects tamed by Redux Saga. GitHub Actions wired for CI/CD — every push tests and deploys itself.',
     stack: ['React', 'TypeScript', 'Redux Saga', 'Socket.io', 'MongoDB', 'GitHub Actions'],
@@ -80,22 +89,44 @@ export function initProjects() {
       ? p.live.replace(/^https?:\/\//, '')
       : `dipta.dev/${p.name.toLowerCase()} — interactive preview`;
 
-    if (p.live) {
+    const stackChips = p.stack.map(s => `<span>${s}</span>`).join('');
+
+    if (p.live && p.embed) {
+      /* Site allows framing — embed it live */
       bodyEl.innerHTML = `
         <iframe class="pjm-frame" src="${p.live}" title="${p.name}"
           sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
           referrerpolicy="no-referrer" loading="lazy"></iframe>
       `;
-    } else {
+    } else if (p.live) {
+      /* Live, but the app blocks framing (X-Frame-Options / CSP) — open in a new tab */
       bodyEl.innerHTML = `
         <div class="pjm-preview">
           <div class="pjm-pv-head">${p.name}</div>
           <div class="pjm-pv-flavor">${p.flavor} · ${p.year}</div>
           <p class="pjm-pv-desc">${p.desc}</p>
-          <div class="pjm-pv-stack">${p.stack.map(s => `<span>${s}</span>`).join('')}</div>
+          <div class="pjm-pv-stack">${stackChips}</div>
+          <div class="pjm-demo">
+            <div class="big">🚀 This one runs live</div>
+            <p>${p.name} enforces strict security headers, so it can't be shown inside another site's frame. Open the real, fully interactive app in a new tab:</p>
+            <div class="pjm-ctas">
+              <a class="pjm-cta primary" href="${p.live}" target="_blank" rel="noopener">Open live site ↗</a>
+              <a class="pjm-cta ghost" href="${p.repo}" target="_blank" rel="noopener">View code ↗</a>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      /* No public deployment yet */
+      bodyEl.innerHTML = `
+        <div class="pjm-preview">
+          <div class="pjm-pv-head">${p.name}</div>
+          <div class="pjm-pv-flavor">${p.flavor} · ${p.year}</div>
+          <p class="pjm-pv-desc">${p.desc}</p>
+          <div class="pjm-pv-stack">${stackChips}</div>
           <div class="pjm-demo">
             <div class="big">🎮 Built with ${p.stack[0]} + ${p.stack[1]}</div>
-            <p>This project isn't deployed publicly yet — the full source is on GitHub, and a live embed will load right here once it's online.</p>
+            <p>This project isn't deployed publicly yet — the full source is on GitHub.</p>
             <div class="pjm-ctas">
               <a class="pjm-cta primary" href="${p.repo}" target="_blank" rel="noopener">View code on GitHub ↗</a>
             </div>
